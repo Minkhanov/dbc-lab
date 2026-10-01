@@ -1,0 +1,127 @@
+{
+  "poolFees": {
+    "baseFee": {
+      "cliffFeeNumerator": {
+        "$bn": "100000000"
+      },
+      "firstFactor": 20,
+      "secondFactor": {
+        "$bn": "30"
+      },
+      "thirdFactor": {
+        "$bn": "1391"
+      },
+      "baseFeeMode": 1
+    },
+    "dynamicFee": {
+      "binStep": 1,
+      "binStepU128": {
+        "$bn": "1844674407370955"
+      },
+      "filterPeriod": 10,
+      "decayPeriod": 120,
+      "reductionFactor": 5000,
+      "maxVolatilityAccumulator": 14460000,
+      "variableFeeControl": 478
+    }
+  },
+  "collectFeeMode": 0,
+  "migrationOption": 1,
+  "activationType": 1,
+  "tokenType": 0,
+  "tokenDecimal": 6,
+  "partnerLiquidityPercentage": 0,
+  "partnerPermanentLockedLiquidityPercentage": 100,
+  "creatorLiquidityPercentage": 0,
+  "creatorPermanentLockedLiquidityPercentage": 0,
+  "migrationQuoteThreshold": {
+    "$bn": "750000000"
+  },
+  "sqrtStartPrice": {
+    "$bn": "395287375632017053"
+  },
+  "lockedVesting": {
+    "amountPerPeriod": {
+      "$bn": "0"
+    },
+    "cliffDurationFromMigrationTime": {
+      "$bn": "0"
+    },
+    "frequency": {
+      "$bn": "0"
+    },
+    "numberOfPeriod": {
+      "$bn": "0"
+    },
+    "cliffUnlockAmount": {
+      "$bn": "0"
+    }
+  },
+  "migrationFeeOption": 1,
+  "tokenSupply": {
+    "preMigrationTokenSupply": {
+      "$bn": "1000000000000"
+    },
+    "postMigrationTokenSupply": {
+      "$bn": "1000000000000"
+    }
+  },
+  "creatorTradingFeePercentage": 0,
+  "tokenUpdateAuthority": 1,
+  "migrationFee": {
+    "feePercentage": 0,
+    "creatorFeePercentage": 0
+  },
+  "migratedPoolFee": {
+    "collectFeeMode": 0,
+    "dynamicFee": 0,
+    "poolFeeBps": 0
+  },
+  "poolCreationFee": {
+    "$bn": "0"
+  },
+  "partnerLiquidityVestingInfo": {
+    "vestingPercentage": 0,
+    "bpsPerPeriod": 0,
+    "numberOfPeriods": 0,
+    "cliffDurationFromMigrationTime": 0,
+    "frequency": 0
+  },
+  "creatorLiquidityVestingInfo": {
+    "vestingPercentage": 0,
+    "bpsPerPeriod": 0,
+    "numberOfPeriods": 0,
+    "cliffDurationFromMigrationTime": 0,
+    "frequency": 0
+  },
+  "migratedPoolBaseFeeMode": 0,
+  "migratedPoolMarketCapFeeSchedulerParams": {
+    "numberOfPeriod": 0,
+    "sqrtPriceStepBps": 0,
+    "schedulerExpirationDuration": 0,
+    "reductionFactor": {
+      "$bn": "0"
+    }
+  },
+  "enableFirstSwapWithMinFee": false,
+  "compoundingFeeBps": 0,
+  "padding": [],
+  "curve": [
+    {
+      "sqrtPrice": {
+        "$bn": "922337203685477580"
+      },
+      "liquidity": {
+        "$bn": "484227034345634612660885317719"
+      }
+    },
+    {
+      "sqrtPrice": {
+        "$bn": "79226673521066979257578248091"
+      },
+      "liquidity": {
+        "$bn": "2999440586420091830530"
+      }
+    }
+  ]
+}

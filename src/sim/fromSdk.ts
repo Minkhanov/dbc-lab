@@ -145,3 +145,49 @@ export function simConfigFromAccount(pc: PoolConfigAccountLike, quoteDecimals: n
     activationType: pc.activationType === 0 ? 0 : 1,
   };
 }
+
+/** On-chain `VirtualPool.poolState` (SDK `client.state.getPool(...).poolState`) -> PoolState, to continue a simulation from a live pool. */
+export interface VirtualPoolAccountLike {
+  poolState: {
+    sqrtPrice: BNLike;
+    quoteReserve: BNLike;
+    baseReserve?: BNLike;
+    partnerQuoteFee: BNLike;
+    creatorQuoteFee: BNLike;
+    protocolQuoteFee: BNLike;
+    partnerBaseFee: BNLike;
+    creatorBaseFee: BNLike;
+    protocolBaseFee: BNLike;
+    activationPoint: BNLike;
+    hasSwap?: number;
+    volatilityTracker: {
+      sqrtPriceReference: BNLike;
+      volatilityAccumulator: BNLike;
+      volatilityReference: BNLike;
+      lastUpdateTimestamp: BNLike;
+    };
+  };
+}
+
+export function poolStateFromAccount(p: VirtualPoolAccountLike): import("./types.js").PoolState {
+  const s = p.poolState;
+  return {
+    sqrtPrice: big(s.sqrtPrice),
+    quoteReserve: big(s.quoteReserve),
+    baseSold: 0n,
+    partnerQuoteFee: big(s.partnerQuoteFee),
+    creatorQuoteFee: big(s.creatorQuoteFee),
+    protocolQuoteFee: big(s.protocolQuoteFee),
+    partnerBaseFee: big(s.partnerBaseFee),
+    creatorBaseFee: big(s.creatorBaseFee),
+    protocolBaseFee: big(s.protocolBaseFee),
+    activationPoint: big(s.activationPoint),
+    volatility: {
+      sqrtPriceReference: big(s.volatilityTracker.sqrtPriceReference),
+      volatilityAccumulator: big(s.volatilityTracker.volatilityAccumulator),
+      volatilityReference: big(s.volatilityTracker.volatilityReference),
+      lastUpdateTimestamp: big(s.volatilityTracker.lastUpdateTimestamp),
+    },
+    hasSwap: (s.hasSwap ?? 1) !== 0,
+  };
+}

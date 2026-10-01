@@ -10,7 +10,17 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "cli": "tsx src/cli/index.ts"
+    "cli": "tsx src/cli/index.ts",
+    "devnet:keygen": "tsx scripts/gen-devnet-keypair.ts",
+    "devnet:airdrop": "tsx scripts/airdrop.ts",
+    "devnet:dryrun": "tsx scripts/dryrun-config.ts",
+    "devnet:conformance": "tsx scripts/conformance-devnet.ts",
+    "devnet:config": "tsx src/devnet/run.ts config",
+    "devnet:pool": "tsx src/devnet/run.ts pool",
+    "devnet:buys": "tsx src/devnet/run.ts buys",
+    "devnet:migrate": "tsx src/devnet/run.ts migrate",
+    "devnet:all": "tsx src/devnet/run.ts all",
+    "devnet:proof": "tsx scripts/render-proof.ts"
   },
   "license": "MIT",
   "dependencies": {

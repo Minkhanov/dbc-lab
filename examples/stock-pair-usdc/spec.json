@@ -1,0 +1,53 @@
+{
+  "id": "stock-pair-usdc",
+  "name": "Tokenized-stock style (USDC quote, 750 USDC graduation)",
+  "summary": "Template for thinly traded / newly tokenized names: USDC quote, graduation at 750 USDC (the keeper threshold for USDC), low-volatility start (high liquidity at the bottom), dynamic fee on to dampen volatility spikes. Replace the USDC mint with a stock-token mint for stock pairs; keepers then need a threshold of at least ~750 USD equivalent.",
+  "tags": [
+    "equity",
+    "stocks",
+    "usdc-quote",
+    "keeper-compatible"
+  ],
+  "quote": {
+    "symbol": "USDC",
+    "decimals": 6
+  },
+  "token": {
+    "supply": 1000000,
+    "decimals": 6,
+    "standard": "spl",
+    "authority": "immutable",
+    "leftover": 0
+  },
+  "curve": {
+    "kind": "threshold",
+    "migrationQuoteThreshold": 750,
+    "percentageSupplyOnMigration": 30
+  },
+  "fee": {
+    "mode": "exponential",
+    "startingBps": 1000,
+    "endingBps": 50,
+    "numberOfPeriod": 20,
+    "totalDuration": 600,
+    "dynamicFee": true,
+    "collect": "quote",
+    "creatorSharePercent": 0,
+    "poolCreationFeeSol": 0
+  },
+  "migration": {
+    "damm2FeeOption": "bps30",
+    "migrationFeePercent": 0,
+    "creatorMigrationFeePercent": 0
+  },
+  "liquidity": {
+    "partnerPercent": 0,
+    "partnerPermanentLockedPercent": 100,
+    "creatorPercent": 0,
+    "creatorPermanentLockedPercent": 0
+  },
+  "activation": "timestamp",
+  "notes": [
+    "Illustrative. Not investment advice. xStocks / Ondo / Backpack mints and their regulatory status are out of scope for this tool."
+  ]
+}

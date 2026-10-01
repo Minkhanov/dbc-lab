@@ -1,0 +1,49 @@
+{
+  "id": "classic-meme",
+  "name": "Classic meme launch (10 SOL graduation)",
+  "summary": "Single constant-product segment, 1B supply, 20% of supply seeds DAMM v2, graduation at exactly 10 SOL so the mainnet migration keepers pick it up. 50% -> 1% exponential anti-snipe fee over 5 minutes.",
+  "tags": [
+    "meme",
+    "sol-quote",
+    "keeper-compatible"
+  ],
+  "quote": {
+    "symbol": "SOL",
+    "decimals": 9
+  },
+  "token": {
+    "supply": 1000000000,
+    "decimals": 6,
+    "standard": "spl",
+    "authority": "immutable",
+    "leftover": 0
+  },
+  "curve": {
+    "kind": "threshold",
+    "migrationQuoteThreshold": 10,
+    "percentageSupplyOnMigration": 20
+  },
+  "fee": {
+    "mode": "exponential",
+    "startingBps": 5000,
+    "endingBps": 100,
+    "numberOfPeriod": 30,
+    "totalDuration": 300,
+    "dynamicFee": true,
+    "collect": "quote",
+    "creatorSharePercent": 50,
+    "poolCreationFeeSol": 0
+  },
+  "migration": {
+    "damm2FeeOption": "bps100",
+    "migrationFeePercent": 0,
+    "creatorMigrationFeePercent": 0
+  },
+  "liquidity": {
+    "partnerPercent": 0,
+    "partnerPermanentLockedPercent": 100,
+    "creatorPercent": 0,
+    "creatorPermanentLockedPercent": 0
+  },
+  "activation": "timestamp"
+}
