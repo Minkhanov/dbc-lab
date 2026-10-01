@@ -80,20 +80,29 @@ Package `@meteora-ag/dynamic-bonding-curve-sdk@1.5.13`, deps: `@coral-xyz/anchor
 3. For the **exponential** scheduler the per-period reduction is floored to whole bps, so the effective ending fee differs slightly from the requested one (requested 1.00%, effective 1.0019% for 50% -> 1% over 30 periods).
 4. `buildCurve*` always produce fixed-supply configs; the last curve entry out to `MAX_SQRT_PRICE` holds the unsold remainder and is never reached.
 5. A `PartialFill` that crosses the threshold can leave the reserve a few lamports above the threshold (3 lamports on a real devnet pool), so "surplus" is dust, not a feature.
-6. The public devnet faucet (`api.devnet.solana.com` `requestAirdrop`) returned `429 ... airdrop limit today or faucet has run dry` for this machine for the whole session; `faucet.solana.com` blocks scripted access (HTTP 403 for static assets) and uses a human check, so it is not used by the tool.
+6. The 0.2% protocol liquidity migration fee is **stored on each virtual pool** (`protocol_liquidity_migration_fee_bps`): 20 on newer pools, 0 on older devnet pools. Replaying an existing pool must read that field (`migrationOutcome(cfg, bps)`).
+7. `migration_damm_v2` seeds the DAMM v2 pool with the quote reserve and the **real base vault balance minus fees** (program: `get_included_protocol_fee_migration_amounts_2`), not with `migration_base_threshold`; the latter is what `create_config` computes and stores. (Inference, not verified: for quote-limited pools both give the same liquidity; 30 of 37 simulated migrations matched exactly.)
+8. Completed pools with locked base-token vesting sit in `migrationProgress = 1` and `migration_damm_v2` fails with `NotPermitToDoThisAction` (6022) until `createLocker` runs.
+9. The public devnet faucet (`api.devnet.solana.com` `requestAirdrop`) returned `429 ... airdrop limit today or faucet has run dry` for this machine for the whole session; `faucet.solana.com` blocks scripted access (HTTP 403 for static assets) and uses a human check, so it is not used by the tool.
 
 ## 6. What this tool does with it
 
 `LaunchSpec` (JSON) -> official SDK builders -> `ConfigParameters` (what goes on chain) -> our bigint simulator reads that same object. Export writes the spec, the BN-safe `config-parameters.json` and a runnable `create-config.ts`.
 
-## 7. Simulator verification status (all reproducible from this repo)
+## 7. Simulator verification status (all reproducible from this repo, 2026-10-01)
 
 | Check | Result |
 |---|---|
-| Unit/invariant/parity tests (`npm test`) | see STATUS.md for the current count |
-| Simulator vs SDK `swapQuoteExactIn` / `swapQuotePartialFill` over random buy sequences until graduation, all 5 presets (incl. exponential scheduler, dynamic fee) | exact equality of output, next sqrt price, trading fee, protocol fee, gross input |
-| `create_config` of every preset simulated against the **deployed devnet program** (`scripts/dryrun-config.ts`) | program accepts all; `migrationSqrtPrice`, `migrationQuoteThreshold`, `swapBaseAmount`, `migrationBaseThreshold` equal the simulator's own values |
-| Buys on **real devnet pools** simulated against the deployed program vs our simulator (`scripts/conformance-devnet.ts`) | see DEVNET-PROOF.md |
+| `npm test` (vitest): invariants, scenarios, serialisation, SDK parity | 32 tests pass |
+| Simulator vs SDK `swapQuoteExactIn` / `swapQuotePartialFill`, random buy sequences until graduation, all 5 presets (linear + exponential scheduler, dynamic fee exercised) | exact equality of tokens out, next sqrt price, trading fee, protocol fee, gross input |
+| `create_config` of every preset simulated against the **deployed devnet program** (`npm run devnet:dryrun`, unsigned `simulateTransaction`, nothing sent) | the program accepts all 5; `migrationSqrtPrice`, `migrationQuoteThreshold`, `swapBaseAmount`, `migrationBaseThreshold` equal the simulator's own values |
+| Buys on **176 real devnet pools** (seeds 1 to 3 plus a timing watcher): `swap2` simulated against the deployed program vs the simulator started from the pool's pre-state (`npm run devnet:conformance`) | **176 of 176 equal** (tokens out, sqrt price, quote reserve, partner/creator/protocol fee accumulators; integer equality). Includes 66 dynamic-fee pools, 30 exponential schedulers, 8 output-token-fee pools, 35 partial fills. 2 further pools were test artifacts (the simulated payer could not afford a 4000+ SOL input) and are excluded. |
+| Time dimension: 6 pools caught **while their fee scheduler was still decaying** (5 exponential), clock read from the Clock sysvar returned by the same simulation (`npm run devnet:conformance:timing`) | 6 of 6 equal, no clock shift needed |
+| `creator.createPool` simulated on an existing devnet config | accepted; pool starts at the config's `sqrtStartPrice`, creator = payer |
+| `migration.migrateToDammV2` simulated on 40 completed devnet pools (`npm run devnet:dryrun:pool`) | 37 accepted; DAMM v2 opening sqrt price **equals the DBC migration price in 37 of 37**; opening liquidity exactly equals the simulator's in 30 of 37, the rest within 6.7e-9 relative (probable cause: real base vault balance; not verified). 2 rejected with `NotPermitToDoThisAction` because they need `createLocker` (locked vesting, `migrationProgress = 1`); 1 skipped (rate-limiter config, unsupported) |
+| Own pool on devnet: config -> pool -> buys -> migration, with signatures | **not executed**: devnet faucet unavailable (see section 5, item 9); the runner is written and resumable |
+
+Method note: `simulateTransaction` with `sigVerify` off and an arbitrary funded devnet system account as the (unsigned) fee payer executes the real deployed program against real devnet state and returns post-state accounts. Nothing is sent, nothing is signed, no funds can move. The Clock sysvar can be requested in the same call, which gives the exact `unix_timestamp` the program used.
 
 ## 8. Open points / not covered yet
 

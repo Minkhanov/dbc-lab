@@ -117,7 +117,6 @@ export function runScenario(cfg: SimConfig, buys: readonly ScenarioBuy[], opts: 
   const rows: TradeRow[] = [];
   let paid = 0n;
   let feeQuote = 0n;
-  let feeBase = 0n;
   let graduatedAt: number | null = null;
   let skipped = 0;
 
@@ -131,8 +130,7 @@ export function runScenario(cfg: SimConfig, buys: readonly ScenarioBuy[], opts: 
     const nowTs = act + BigInt(Math.floor(b.atSec));
     const r = buy(cfg, pool, amount, "partialFill", point, nowTs);
     paid += r.includedFeeInput;
-    if (r.feeOnBase) feeBase += r.tradingFee + r.protocolFee;
-    else feeQuote += r.tradingFee + r.protocolFee;
+    if (!r.feeOnBase) feeQuote += r.tradingFee + r.protocolFee;
     const p = price(pool.sqrtPrice);
     rows.push({
       index: i,
