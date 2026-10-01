@@ -11,3 +11,4 @@ devnet-run/*.secret.json
 *.log
 exports/
 devnet-run/*.log
+STATUS.md
