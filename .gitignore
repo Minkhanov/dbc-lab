@@ -1,0 +1,11 @@
+node_modules/
+.tools/
+dist/
+coverage/
+.env
+.env.*
+keys/
+*.keypair.json
+*-keypair.json
+devnet-run/*.secret.json
+*.log
