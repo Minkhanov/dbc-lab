@@ -35,7 +35,11 @@ function ceilDiv(a: bigint, b: bigint): bigint {
   return (a + b - 1n) / b;
 }
 
-export function migrationOutcome(cfg: SimConfig): MigrationOutcome {
+/**
+ * @param protocolLiquidityFeeBps value stored on the virtual pool (`protocol_liquidity_migration_fee_bps`), 20 for pools
+ *   created after the fee was introduced and 0 for older pools (read it from chain when replaying an existing pool).
+ */
+export function migrationOutcome(cfg: SimConfig, protocolLiquidityFeeBps: bigint = PROTOCOL_LIQUIDITY_MIGRATION_FEE_BPS): MigrationOutcome {
   const thr = cfg.migrationQuoteThreshold;
   const quoteAmount = ceilDiv(thr * BigInt(100 - cfg.migrationFeePercentage), 100n);
   const migrationFee = thr - quoteAmount;
@@ -46,7 +50,7 @@ export function migrationOutcome(cfg: SimConfig): MigrationOutcome {
   const liquidity = (quoteAmount << 128n) / (sqrt - MIN_SQRT_PRICE);
   const baseAmount = deltaBase(sqrt, MAX_SQRT_PRICE, liquidity, "up");
 
-  const protocolQuoteFee = (quoteAmount * PROTOCOL_LIQUIDITY_MIGRATION_FEE_BPS) / 10_000n;
+  const protocolQuoteFee = (quoteAmount * protocolLiquidityFeeBps) / 10_000n;
   const feeLiquidity = (protocolQuoteFee << 128n) / (sqrt - MIN_SQRT_PRICE);
   const protocolBaseFee = deltaBase(sqrt, MAX_SQRT_PRICE, feeLiquidity, "down");
 
@@ -62,4 +66,17 @@ export function migrationOutcome(cfg: SimConfig): MigrationOutcome {
     poolBase: baseAmount - protocolBaseFee,
     poolSqrtPrice: sqrt,
   };
+}
+
+/**
+ * Opening liquidity of the migrated DAMM v2 pool for the (default) concentrated-liquidity handler:
+ * min(liquidity implied by the base deposit, liquidity implied by the quote deposit), both floor-rounded.
+ * Mirrors `calculate_concentrated_initial_liquidity` in migration_handler/concentrated_liquidity.rs.
+ * Not valid for the compounding migrated-pool fee mode (a different handler).
+ */
+export function dammInitialLiquidity(m: MigrationOutcome): bigint {
+  const sqrt = m.poolSqrtPrice;
+  const fromBase = (m.poolBase * sqrt * MAX_SQRT_PRICE) / (MAX_SQRT_PRICE - sqrt);
+  const fromQuote = (m.poolQuote << 128n) / (sqrt - MIN_SQRT_PRICE);
+  return fromBase > fromQuote ? fromQuote : fromBase;
 }

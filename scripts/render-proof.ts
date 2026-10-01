@@ -62,7 +62,8 @@ if (!state.config) {
   push("`429 You've either reached your airdrop limit today or the airdrop faucet has run dry`. The runner (`src/devnet/run.ts`) is complete and resumable;");
   push("it runs with `npm run devnet:all` as soon as the wallet holds about 1 devnet SOL. This section is regenerated from `devnet-run/state.json`.");
   push();
-  push("Wallet to fund (devnet only, public key): see `keys/` / `STATUS.md`.");
+  push("Wallet to fund (devnet only, public key): `EaF7jiLSjxvKNr76VmPM8aWucP1j5i8A6eM6WUjX3LRE`.");
+  push();
 } else {
   push(`Payer / partner / creator / trader (same throw-away wallet): \`${state.payer}\``);
   push(`Preset: \`${state.presetId}\``);
@@ -159,7 +160,10 @@ if (conf) {
   if (bad.length) {
     push("Non-matching or non-simulatable pools:");
     push();
-    for (const r of bad) push(`- \`${r.pool}\` ${r.status}: ${r.detail ?? ""}`);
+    for (const r of bad) {
+      const artifact = /InstructionError":\[1,\{"Custom":1\}\]/.test(r.detail ?? "") && /11111111111111111111111111111111/.test(r.detail ?? "");
+      push(`- \`${r.pool}\` ${r.status}: ${artifact ? "TEST ARTIFACT, not a simulator result: System Program InsufficientFunds while wrapping " + Number(r.amountIn) / 1e9 + " SOL of input (the simulated payer holds ~974 SOL). Such pools are now excluded by the sampler." : (r.detail ?? "")}`);
+    }
     push();
   }
   push("Pool addresses tested (all on devnet): " + conf.records.map((r) => `\`${r.pool}\``).join(", "));
@@ -168,6 +172,30 @@ if (conf) {
   push("(run `npm run devnet:conformance` to generate)");
   push();
 }
+
+const poolMigPath = path.join(root, "devnet-run", "dryrun-pool-migration.txt");
+push("## D. `createPool` and `migrateToDammV2` against the deployed programs (dry run, no SOL needed)");
+push();
+push("Same technique (unsigned `simulateTransaction`): the SDK `creator.createPool` transaction is simulated against an existing devnet config, and the SDK");
+push("`migration.migrateToDammV2` transaction is simulated against devnet pools whose curve is complete but not yet migrated. The returned DAMM v2 pool account is decoded");
+push("and its opening `sqrtPrice` is compared with the DBC `migrationSqrtPrice`. Two pools were rejected with DBC error 6022 `NotPermitToDoThisAction`: both are in");
+push("`migrationProgress = 1` (PostBondingCurve) with locked base-token vesting, i.e. they need `createLocker` first (docs: Migration and liquidity). Our presets have no vesting.");
+push();
+if (fs.existsSync(poolMigPath)) {
+  push("```");
+  push(
+    fs
+      .readFileSync(poolMigPath, "utf8")
+      .trim()
+      .split(/\r?\n/)
+      .map((l) => l.slice(0, 260))
+      .join(String.fromCharCode(10)),
+  );
+  push("```");
+} else {
+  push("(run `npm run devnet:dryrun:pool` to generate)");
+}
+push();
 
 fs.writeFileSync(path.join(root, "DEVNET-PROOF.md"), L.join("\n"));
 console.log("DEVNET-PROOF.md written");

@@ -97,7 +97,7 @@ export const PRESETS: readonly LaunchSpec[] = [
     id: "long-curve",
     name: "Long curve (deep graduation)",
     summary:
-      "Wide market-cap range (30 -> 3000 SOL equivalent) with liquidity weights that grow toward the top, so graduation needs a much larger quote reserve. Linear 25% -> 1% fee over 15 minutes, 2% migration fee shared 50/50 with the creator.",
+      "Wide market-cap range (30 -> 3000 SOL equivalent) with moderately front-loaded liquidity, so graduation needs a much larger quote reserve (hundreds of SOL) and early buyers do not get an outsized price advantage. Linear 25% -> 1% fee over 15 minutes, 2% migration fee shared 50/50 with the creator.",
     tags: ["long-curve", "sol-quote", "deep-liquidity"],
     quote: { symbol: "SOL", decimals: 9 },
     token: { supply: 1_000_000_000, decimals: 6, standard: "spl", authority: "immutable", leftover: 1000 },
@@ -105,7 +105,7 @@ export const PRESETS: readonly LaunchSpec[] = [
       kind: "weights",
       initialMarketCap: 30,
       migrationMarketCap: 3000,
-      liquidityWeights: [1, 1, 1, 2, 2, 3, 3, 4, 5, 6, 8, 10, 12, 14, 16, 20],
+      liquidityWeights: [6, 6, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 2, 2, 2, 2],
     },
     fee: {
       mode: "linear",

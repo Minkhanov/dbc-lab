@@ -1,0 +1,6 @@
+2026-10-01T20:17:30.051Z  fee payer (unsigned, simulation only) = DHLXnJdACTY83yKwnUkeoDjqi4QBbsYGa1v8tJL76ViX
+devnet-micro: program accepted config; all 4 derived values equal the simulator
+classic-meme: program accepted config; all 4 derived values equal the simulator
+flat-start: program accepted config; all 4 derived values equal the simulator
+long-curve: program accepted config; all 4 derived values equal the simulator
+stock-pair-usdc: program accepted config; all 4 derived values equal the simulator

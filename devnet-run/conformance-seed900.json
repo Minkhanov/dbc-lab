@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "when": "2026-10-01T20:13:52.203Z",
+    "rpc": "https://api.devnet.solana.com",
+    "mode": "timing watcher",
+    "testedPools": 6,
+    "match": 6,
+    "mismatch": 0,
+    "simError": 0,
+    "chainError": 0,
+    "matchedWithClockShift": 0,
+    "withDynamicFee": 1,
+    "outputTokenMode": 0,
+    "exponentialScheduler": 5,
+    "partialFill": 1,
+    "scheduleStillDecaying": 6,
+    "note": "Programmatic simulateTransaction against the deployed devnet DBC program; no transaction was sent, no signature produced."
+  },
+  "records": [
+    {
+      "pool": "F74Nb6JffCo1RGRLwMQmdbEi7rBw74VgEPnh3VhABkau",
+      "config": "D7hfCfgGSZ69eS6UzW4fWC4pPkDxPWcoZAitvuwfAyiP",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "mode": "exactIn",
+      "amountIn": "125000000",
+      "clockSec": 1790885158,
+      "status": "match",
+      "chain": {
+        "baseOut": "69497196057183",
+        "sqrtPrice": "24665476619614639",
+        "quoteReserve": "116157461",
+        "partnerFee": "4598121",
+        "creatorFee": "2475911",
+        "protocolFee": "1768507"
+      },
+      "poolAgeSec": 33,
+      "schedulePeriod": 5,
+      "scheduleActive": true,
+      "sim": {
+        "baseOut": "69497196057183",
+        "sqrtPrice": "24665476619614639",
+        "quoteReserve": "116157461",
+        "partnerFee": "4598121",
+        "creatorFee": "2475911",
+        "protocolFee": "1768507"
+      },
+      "baseFeeNumeratorAtClock": "70740307",
+      "timeShiftSecUsed": 0
+    },
+    {
+      "pool": "EkNDMW9PfgPgPFyo9nN4nYpeZaWk2t1UU8XjXNyUvYWc",
+      "config": "BxW28qXMH35XVCg3KBR5YVFmoXUk87Ed3VkrHHvfTkWU",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "mode": "exactIn",
+      "amountIn": "126600",
+      "clockSec": 1790885159,
+      "status": "match",
+      "chain": {
+        "baseOut": "7851807",
+        "sqrtPrice": "2332946340407592057",
+        "quoteReserve": "6117150015",
+        "partnerFee": "21190637",
+        "creatorFee": "21190633",
+        "protocolFee": "10595315"
+      },
+      "poolAgeSec": 628,
+      "schedulePeriod": 0,
+      "scheduleActive": true,
+      "sim": {
+        "baseOut": "7851807",
+        "sqrtPrice": "2332946340407592057",
+        "quoteReserve": "6117150015",
+        "partnerFee": "21190637",
+        "creatorFee": "21190633",
+        "protocolFee": "10595315"
+      },
+      "baseFeeNumeratorAtClock": "8011355",
+      "timeShiftSecUsed": 0
+    },
+    {
+      "pool": "9FyEVCcRrNX9zCrLqDPkDwmwsvWD1EnEX9uL7A8Q8qcd",
+      "config": "D7hfCfgGSZ69eS6UzW4fWC4pPkDxPWcoZAitvuwfAyiP",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "mode": "exactIn",
+      "amountIn": "125000000",
+      "clockSec": 1790885196,
+      "status": "match",
+      "chain": {
+        "baseOut": "67124331870041",
+        "sqrtPrice": "24606921992646223",
+        "quoteReserve": "111925124",
+        "partnerFee": "6798936",
+        "creatorFee": "3660965",
+        "protocolFee": "2614975"
+      },
+      "poolAgeSec": 27,
+      "schedulePeriod": 4,
+      "scheduleActive": true,
+      "sim": {
+        "baseOut": "67124331870041",
+        "sqrtPrice": "24606921992646223",
+        "quoteReserve": "111925124",
+        "partnerFee": "6798936",
+        "creatorFee": "3660965",
+        "protocolFee": "2614975"
+      },
+      "baseFeeNumeratorAtClock": "104599005",
+      "timeShiftSecUsed": 0
+    },
+    {
+      "pool": "38xuTsoTLuPuc9D3z2vjKQrjw652CwYjzEehJvUMsbw1",
+      "config": "D7hfCfgGSZ69eS6UzW4fWC4pPkDxPWcoZAitvuwfAyiP",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "mode": "partialFill",
+      "amountIn": "10000000000",
+      "clockSec": 1790885231,
+      "status": "match",
+      "chain": {
+        "baseOut": "799999953434157",
+        "sqrtPrice": "92233720368547758",
+        "quoteReserve": "5000000000",
+        "partnerFee": "197926156",
+        "creatorFee": "106575622",
+        "protocolFee": "76125444"
+      },
+      "poolAgeSec": 32,
+      "schedulePeriod": 5,
+      "scheduleActive": true,
+      "sim": {
+        "baseOut": "799999953434157",
+        "sqrtPrice": "92233720368547758",
+        "quoteReserve": "5000000000",
+        "partnerFee": "197926156",
+        "creatorFee": "106575622",
+        "protocolFee": "76125444"
+      },
+      "baseFeeNumeratorAtClock": "70740307",
+      "timeShiftSecUsed": 0
+    },
+    {
+      "pool": "CbU8gCMgPvfS5xhbQvA1oSnzK2dEfX25kfEKQVe3R6CV",
+      "config": "D7hfCfgGSZ69eS6UzW4fWC4pPkDxPWcoZAitvuwfAyiP",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "mode": "exactIn",
+      "amountIn": "125000000",
+      "clockSec": 1790885232,
+      "status": "match",
+      "chain": {
+        "baseOut": "72901470426954",
+        "sqrtPrice": "24749971481871316",
+        "quoteReserve": "122264762",
+        "partnerFee": "1422325",
+        "creatorFee": "765866",
+        "protocolFee": "547047"
+      },
+      "poolAgeSec": 51,
+      "schedulePeriod": 8,
+      "scheduleActive": true,
+      "sim": {
+        "baseOut": "72901470426954",
+        "sqrtPrice": "24749971481871316",
+        "quoteReserve": "122264762",
+        "partnerFee": "1422325",
+        "creatorFee": "765866",
+        "protocolFee": "547047"
+      },
+      "baseFeeNumeratorAtClock": "21881903",
+      "timeShiftSecUsed": 0
+    },
+    {
+      "pool": "8o7tuyNdPh7SG12gJy4HMgFRrUscLrX9AYoE74HZHcpV",
+      "config": "G1CrbvXHugFgUFLzqStnrY7nZPrdnzzpKcy1NKr43YrT",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "mode": "exactIn",
+      "amountIn": "2125000000",
+      "clockSec": 1790885268,
+      "status": "match",
+      "chain": {
+        "baseOut": "69497202249017",
+        "sqrtPrice": "101698361347549035",
+        "quoteReserve": "1974676847",
+        "partnerFee": "78168040",
+        "creatorFee": "42090483",
+        "protocolFee": "30064630"
+      },
+      "poolAgeSec": 33,
+      "schedulePeriod": 5,
+      "scheduleActive": true,
+      "sim": {
+        "baseOut": "69497202249017",
+        "sqrtPrice": "101698361347549035",
+        "quoteReserve": "1974676847",
+        "partnerFee": "78168040",
+        "creatorFee": "42090483",
+        "protocolFee": "30064630"
+      },
+      "baseFeeNumeratorAtClock": "70740307",
+      "timeShiftSecUsed": 0
+    }
+  ]
+}

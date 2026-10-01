@@ -20,7 +20,10 @@
     "devnet:buys": "tsx src/devnet/run.ts buys",
     "devnet:migrate": "tsx src/devnet/run.ts migrate",
     "devnet:all": "tsx src/devnet/run.ts all",
-    "devnet:proof": "tsx scripts/render-proof.ts"
+    "devnet:proof": "tsx scripts/render-proof.ts",
+    "devnet:dryrun:pool": "tsx scripts/dryrun-pool-and-migration.ts",
+    "devnet:conformance:timing": "tsx scripts/conformance-timing.ts",
+    "presets:compare": "tsx scripts/compare-presets.ts"
   },
   "license": "MIT",
   "dependencies": {

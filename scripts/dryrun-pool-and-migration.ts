@@ -19,7 +19,7 @@ import {
   deriveDbcPoolAddress,
 } from "@meteora-ag/dynamic-bonding-curve-sdk";
 import { simConfigFromAccount } from "../src/sim/fromSdk.js";
-import { migrationOutcome } from "../src/sim/migration.js";
+import { dammInitialLiquidity, migrationOutcome } from "../src/sim/migration.js";
 
 const PAYER = new PublicKey(process.env.SIM_PAYER ?? "DHLXnJdACTY83yKwnUkeoDjqi4QBbsYGa1v8tJL76ViX");
 const conn = new Connection(process.env.DEVNET_RPC ?? "https://api.devnet.solana.com", "confirmed");
@@ -122,6 +122,8 @@ say(`completed-but-unmigrated SOL-quote DAMM-v2 pools on devnet: ${done.length}`
 
 let tried = 0;
 let ok = 0;
+let okLiq = 0;
+let maxRel = 0;
 const rows: string[] = [];
 for (const p of done.slice(0, 40)) {
   const c = cfgOf.get(p.account.poolState.config.toBase58());
@@ -146,19 +148,29 @@ for (const p of done.slice(0, 40)) {
     }
     const damm = dammProgram.coder.accounts.decode("pool", Buffer.from(acc.data[0] as string, "base64"));
     const sim = simConfigFromAccount(c, 9);
-    const mig = migrationOutcome(sim);
+    const feeBps = BigInt(p.account.poolState.protocolLiquidityMigrationFeeBps.toString());
+    const mig = migrationOutcome(sim, feeBps);
     const priceEq = damm.sqrtPrice.toString() === sim.migrationSqrtPrice.toString();
+    const simL = dammInitialLiquidity(mig);
+    const liqEq = damm.liquidity.toString() === simL.toString();
     rows.push(
       `  ${p.publicKey.toBase58().slice(0, 8)} migrate dry run OK: DAMM v2 pool ${dammPool.toBase58().slice(0, 8)} sqrtPrice == DBC migration sqrtPrice: ${priceEq ? "yes" : "NO"}; ` +
-        `liquidity ${damm.liquidity.toString()}; sim pool deposit quote=${mig.poolQuote} base=${mig.poolBase}`,
+        `opening liquidity chain=${damm.liquidity.toString()} sim=${simL.toString()} ${liqEq ? "(equal)" : "(DIFF)"} [pool protocol_liquidity_migration_fee_bps=${feeBps}]`,
     );
     if (priceEq) ok++;
+    if (liqEq) okLiq++;
+    else {
+      const a = BigInt(damm.liquidity.toString());
+      const d = a > simL ? a - simL : simL - a;
+      const rel = Number((d * 1_000_000_000_000n) / a) / 1e12;
+      if (rel > maxRel) maxRel = rel;
+    }
   } catch (e) {
     rows.push(`  ${p.publicKey.toBase58().slice(0, 8)} migrate dry run error: ${(e as Error).message.slice(0, 160)}`);
   }
   await sleep(400);
 }
-say(`migrateToDammV2 dry runs: ${tried} tried, ${ok} with DAMM v2 opening price equal to the DBC migration price`);
+say(`migrateToDammV2 dry runs: ${tried} tried, ${ok} with DAMM v2 opening price equal to the DBC migration price, ${okLiq} with opening liquidity exactly equal to the simulator (the remaining ones differ by at most ${maxRel.toExponential(2)} relative; probable cause, not verified: the program deposits the real base vault balance, which can differ from the theoretical migration base amount by rounding)`);
 for (const r of rows) say(r);
 
 fs.mkdirSync(path.resolve("devnet-run"), { recursive: true });
