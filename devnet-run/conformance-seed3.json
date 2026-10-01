@@ -1,0 +1,1761 @@
+{
+  "summary": {
+    "when": "2026-10-01T20:05:22.837Z",
+    "rpc": "https://api.devnet.solana.com",
+    "seed": 3,
+    "testedPools": 60,
+    "match": 60,
+    "mismatch": 0,
+    "simError": 0,
+    "chainError": 0,
+    "matchedWithClockShift": 0,
+    "withDynamicFee": 22,
+    "outputTokenMode": 3,
+    "exponentialScheduler": 13,
+    "partialFill": 12,
+    "scheduleStillDecaying": 0,
+    "note": "Programmatic simulateTransaction against the deployed devnet DBC program; no transaction was sent, no signature produced."
+  },
+  "records": [
+    {
+      "pool": "56oEPsau6UTrD9NRhjydGzcSzCwtKrEV2UTgK4PTfsN9",
+      "config": "9jg9v6qx8fov9uzw83qjJJ4gH835xnyyVqNNzJ53i4ze",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "10775169",
+      "clockSec": 1790884942,
+      "status": "match",
+      "chain": {
+        "baseOut": "34259583984307",
+        "sqrtPrice": "10482423792638639",
+        "quoteReserve": "60145087",
+        "partnerFee": "252034",
+        "creatorFee": "252032",
+        "protocolFee": "126016"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "34259583984307",
+        "sqrtPrice": "10482423792638639",
+        "quoteReserve": "60145087",
+        "partnerFee": "252034",
+        "creatorFee": "252032",
+        "protocolFee": "126016"
+      }
+    },
+    {
+      "pool": "AHRXQrD3xKKUPSCnzn4tMzW2mcXjmcL4f7uam597rp7",
+      "config": "7MmYBR61gp655L5QK2VyevY7zpWCwAoophJ1GDneCxdN",
+      "baseFeeMode": 0,
+      "collectFeeMode": 1,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "299750000",
+      "clockSec": 1790884944,
+      "status": "match",
+      "chain": {
+        "baseOut": "4853902835752",
+        "sqrtPrice": "146576161335759550",
+        "quoteReserve": "309750000",
+        "partnerFee": "0",
+        "creatorFee": "10065191784",
+        "protocolFee": "2516297946"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "4853902835752",
+        "sqrtPrice": "146576161335759550",
+        "quoteReserve": "309750000",
+        "partnerFee": "0",
+        "creatorFee": "10065191784",
+        "protocolFee": "2516297946"
+      }
+    },
+    {
+      "pool": "DrJ8REvp58jKb6bavkcJ3mbPejh71eNK5ugm3HnFG6EN",
+      "config": "TrdhCoiinGpcKKU8DBBwVp6oqdXYCEBswkUsqGEDfn7",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1603428227",
+      "clockSec": 1790884945,
+      "status": "match",
+      "chain": {
+        "baseOut": "55855904981323668",
+        "sqrtPrice": "3174876747166837",
+        "quoteReserve": "1581159544",
+        "partnerFee": "12907472",
+        "creatorFee": "12907470",
+        "protocolFee": "6453735"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "55855904981323668",
+        "sqrtPrice": "3174876747166837",
+        "quoteReserve": "1581159544",
+        "partnerFee": "12907472",
+        "creatorFee": "12907470",
+        "protocolFee": "6453735"
+      }
+    },
+    {
+      "pool": "5vNf3CSBSNq2X34eHrhkvLov513NoypVmKU7VDAEhMvS",
+      "config": "5Fn9XwUgXznJtggwoPtx5ruGmepdpvtN47g7kYx3q8y8",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "237625000",
+      "clockSec": 1790884946,
+      "status": "match",
+      "chain": {
+        "baseOut": "53664733437360",
+        "sqrtPrice": "39748822762534428",
+        "quoteReserve": "729773757",
+        "partnerFee": "3140498",
+        "creatorFee": "3140497",
+        "protocolFee": "1570248"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "53664733437360",
+        "sqrtPrice": "39748822762534428",
+        "quoteReserve": "729773757",
+        "partnerFee": "3140498",
+        "creatorFee": "3140497",
+        "protocolFee": "1570248"
+      }
+    },
+    {
+      "pool": "Ew1WFZygzkoZHgU3JMZ4xhSk51WiygouvvjLEPhVgRsf",
+      "config": "DwXeiU7SYyLLA3V5QwHWWQ2jyB2TMLyD14tZ8mNCG8Kb",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "167060000000",
+      "clockSec": 1790884949,
+      "status": "match",
+      "chain": {
+        "baseOut": "747388425444756",
+        "sqrtPrice": "380289371323205464",
+        "quoteReserve": "85000000001",
+        "partnerFee": "1363755103",
+        "creatorFee": "0",
+        "protocolFee": "346938775"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "747388425444756",
+        "sqrtPrice": "380289371323205464",
+        "quoteReserve": "85000000001",
+        "partnerFee": "1363755103",
+        "creatorFee": "0",
+        "protocolFee": "346938775"
+      }
+    },
+    {
+      "pool": "EzbMXatEWdMQyDZ8cnmYDtrN8zog6qVjGEZ7wLBEYJQw",
+      "config": "FSetERkbJVjpPYywaUw2sKJZ1Dz8o2VcBK1hDDBWzqKb",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "17646917",
+      "clockSec": 1790884955,
+      "status": "match",
+      "chain": {
+        "baseOut": "15406873907842",
+        "sqrtPrice": "19953595793663026",
+        "quoteReserve": "311659906",
+        "partnerFee": "1000847",
+        "creatorFee": "780211",
+        "protocolFee": "975263"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "15406873907842",
+        "sqrtPrice": "19953595793663026",
+        "quoteReserve": "311659906",
+        "partnerFee": "1000847",
+        "creatorFee": "780211",
+        "protocolFee": "975263"
+      }
+    },
+    {
+      "pool": "65Zr66WnHUHkqwWVk2QRR9ENoipmA18WGsUPnhhwx8Qj",
+      "config": "7rLaHDsPBWHQZ25FeYqNsRgb3ozrwGsnhtM8Pru8ePpo",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "22530000",
+      "clockSec": 1790884958,
+      "status": "match",
+      "chain": {
+        "baseOut": "33524380158133",
+        "sqrtPrice": "15288474930056310",
+        "quoteReserve": "121005568",
+        "partnerFee": "1219546",
+        "creatorFee": "0",
+        "protocolFee": "304886"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "33524380158133",
+        "sqrtPrice": "15288474930056310",
+        "quoteReserve": "121005568",
+        "partnerFee": "1219546",
+        "creatorFee": "0",
+        "protocolFee": "304886"
+      }
+    },
+    {
+      "pool": "DCkffNPJhyGuofxjTRBXsDsiAHZGoZfFKzjiS2BSanLY",
+      "config": "12c3D5oZQQMFHKiAMREjhEePezTvFBmf1rHF5Mh9753o",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "19930300",
+      "clockSec": 1790884961,
+      "status": "match",
+      "chain": {
+        "baseOut": "18030685822813145",
+        "sqrtPrice": "790255268172402",
+        "quoteReserve": "20484004",
+        "partnerFee": "79557037",
+        "creatorFee": "0",
+        "protocolFee": "15929259"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "18030685822813145",
+        "sqrtPrice": "790255268172402",
+        "quoteReserve": "20484004",
+        "partnerFee": "79557037",
+        "creatorFee": "0",
+        "protocolFee": "15929259"
+      }
+    },
+    {
+      "pool": "HGHJk927xCAcMc8itHeEU5GbNeUzakr6Ac2nXUr44o6D",
+      "config": "9kok72FoZw9ED6GTUQmGhnpH6cywgfoKy24RCxQeJukF",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "121259375",
+      "clockSec": 1790884964,
+      "status": "match",
+      "chain": {
+        "baseOut": "100420780",
+        "sqrtPrice": "20771365796632854528",
+        "quoteReserve": "270581226",
+        "partnerFee": "542520",
+        "creatorFee": "0",
+        "protocolFee": "120629"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "100420780",
+        "sqrtPrice": "20771365796632854528",
+        "quoteReserve": "270581226",
+        "partnerFee": "542520",
+        "creatorFee": "0",
+        "protocolFee": "120629"
+      }
+    },
+    {
+      "pool": "2gH3XCDNRtzdUotaVsDYhKXdv898ViBD3gSYKejfED1K",
+      "config": "BnmC2dv6cNeN3K9nc8XCcBb4n555J7krL1L8QwMFJj56",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "162598330738",
+      "clockSec": 1790884968,
+      "status": "match",
+      "chain": {
+        "baseOut": "759746913995770",
+        "sqrtPrice": "339334713805341360",
+        "quoteReserve": "81299165371",
+        "partnerFee": "657122153",
+        "creatorFee": "0",
+        "protocolFee": "164280538"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "759746913995770",
+        "sqrtPrice": "339334713805341360",
+        "quoteReserve": "81299165371",
+        "partnerFee": "657122153",
+        "creatorFee": "0",
+        "protocolFee": "164280538"
+      }
+    },
+    {
+      "pool": "4og8Xw768wuc4biZMKJFeecVkoWTTKQfeveiMK9HY1CX",
+      "config": "6uYoS8RYDiNkw1ApCxiJ6nyiASK11ioKDLBxy4r7CiCT",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "230111110",
+      "clockSec": 1790884969,
+      "status": "match",
+      "chain": {
+        "baseOut": "31886952656869",
+        "sqrtPrice": "49653675483021110",
+        "quoteReserve": "225508888",
+        "partnerFee": "3681779",
+        "creatorFee": "0",
+        "protocolFee": "7256444"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "31886952656869",
+        "sqrtPrice": "49653675483021110",
+        "quoteReserve": "225508888",
+        "partnerFee": "3681779",
+        "creatorFee": "0",
+        "protocolFee": "7256444"
+      }
+    },
+    {
+      "pool": "BM8AHmzU3TajP7UB2fEm7Xortojf8ua2QMJRt3oiJEL9",
+      "config": "GYrXCehFppWqKgQcjXiCLSk3t822BbciTmQcjEFuK5a8",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1663936346",
+      "clockSec": 1790884972,
+      "status": "match",
+      "chain": {
+        "baseOut": "79078986652747",
+        "sqrtPrice": "87526667138186398",
+        "quoteReserve": "1647296983",
+        "partnerFee": "12661042",
+        "creatorFee": "666370",
+        "protocolFee": "3331056"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "79078986652747",
+        "sqrtPrice": "87526667138186398",
+        "quoteReserve": "1647296983",
+        "partnerFee": "12661042",
+        "creatorFee": "666370",
+        "protocolFee": "3331056"
+      }
+    },
+    {
+      "pool": "64siGDXV8i9PWTJXgLkBESf8Vq69tJcj9hkmG2YAGWeg",
+      "config": "HJ1FVr6kUYbKPpC9Z42VbempsHcnNRMKPfrG86XWQRnx",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1249999999",
+      "clockSec": 1790884976,
+      "status": "match",
+      "chain": {
+        "baseOut": "72856757370180",
+        "sqrtPrice": "78365498710380592",
+        "quoteReserve": "1224977880",
+        "partnerFee": "20096164",
+        "creatorFee": "0",
+        "protocolFee": "5044058"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "72856757370180",
+        "sqrtPrice": "78365498710380592",
+        "quoteReserve": "1224977880",
+        "partnerFee": "20096164",
+        "creatorFee": "0",
+        "protocolFee": "5044058"
+      }
+    },
+    {
+      "pool": "HEpx7VPDQd1BMebCn9cexHHzzm9wkMVu5FaCdawvot7B",
+      "config": "GmjDHtM7jYN3hqWTKjtuV3oGtesLb9GutLYcpCekRXiJ",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "2740914964",
+      "clockSec": 1790884979,
+      "status": "match",
+      "chain": {
+        "baseOut": "82468440166138",
+        "sqrtPrice": "109662512574979262",
+        "quoteReserve": "2695896664",
+        "partnerFee": "17605856",
+        "creatorFee": "26408784",
+        "protocolFee": "11003660"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "82468440166138",
+        "sqrtPrice": "109662512574979262",
+        "quoteReserve": "2695896664",
+        "partnerFee": "17605856",
+        "creatorFee": "26408784",
+        "protocolFee": "11003660"
+      }
+    },
+    {
+      "pool": "8bf4DRTSQYow4BWNS7YpMs7JWP7aiV6J3hfHF8ErqSkx",
+      "config": "8DaBvUaDSFT5MvKBMdXcFAzwpxd1hmueYFprUkggvcB4",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "1000000070",
+      "clockSec": 1790884983,
+      "status": "match",
+      "chain": {
+        "baseOut": "96707903720790",
+        "sqrtPrice": "45963137364715432",
+        "quoteReserve": "990000000",
+        "partnerFee": "0",
+        "creatorFee": "17836092",
+        "protocolFee": "4459023"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "96707903720790",
+        "sqrtPrice": "45963137364715432",
+        "quoteReserve": "990000000",
+        "partnerFee": "0",
+        "creatorFee": "17836092",
+        "protocolFee": "4459023"
+      }
+    },
+    {
+      "pool": "6YdAPNf6N9UGANxhXgGj4x2DLZteqUCPAXTmorTse4SP",
+      "config": "3NdEpJy8QzxhqZzAEtQFLzCj3zJWbjGWFQxdZdpAKmQp",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1801898049",
+      "clockSec": 1790884986,
+      "status": "match",
+      "chain": {
+        "baseOut": "56442061252557",
+        "sqrtPrice": "106444110942658327",
+        "quoteReserve": "1783879075",
+        "partnerFee": "1496831",
+        "creatorFee": "13471366",
+        "protocolFee": "3742043"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "56442061252557",
+        "sqrtPrice": "106444110942658327",
+        "quoteReserve": "1783879075",
+        "partnerFee": "1496831",
+        "creatorFee": "13471366",
+        "protocolFee": "3742043"
+      }
+    },
+    {
+      "pool": "4PQTXJGd8sExAYZH6eMaYR2zLunWzzcQbkmYeBCfn9CP",
+      "config": "EHo4EHDKg4hR76r9R5hoUzbgpxYxuNy48u9h5HWwz2H9",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "79752420",
+      "clockSec": 1790884991,
+      "status": "match",
+      "chain": {
+        "baseOut": "72213035951880651",
+        "sqrtPrice": "631931468773153",
+        "quoteReserve": "88854895",
+        "partnerFee": "718020",
+        "creatorFee": "0",
+        "protocolFee": "179505"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "72213035951880651",
+        "sqrtPrice": "631931468773153",
+        "quoteReserve": "88854895",
+        "partnerFee": "718020",
+        "creatorFee": "0",
+        "protocolFee": "179505"
+      }
+    },
+    {
+      "pool": "FALM1SEtvjcJK2MfXesXWtMFNEE6eZ6BaUi3Zk9jgBbm",
+      "config": "GYrXCehFppWqKgQcjXiCLSk3t822BbciTmQcjEFuK5a8",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1663936346",
+      "clockSec": 1790884993,
+      "status": "match",
+      "chain": {
+        "baseOut": "79078986652747",
+        "sqrtPrice": "87526667138186412",
+        "quoteReserve": "1647296983",
+        "partnerFee": "14309558",
+        "creatorFee": "753134",
+        "protocolFee": "3678112"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "79078986652747",
+        "sqrtPrice": "87526667138186412",
+        "quoteReserve": "1647296983",
+        "partnerFee": "14309558",
+        "creatorFee": "753134",
+        "protocolFee": "3678112"
+      }
+    },
+    {
+      "pool": "BHQhL4TfK7TTH4XzQcMedGDStd6UihRQr9CdEvySsGuW",
+      "config": "Cr6kSoSeHgmj9KaKSn2JYPh1B3fEjngVRLifZGJVTJ7d",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "707807023",
+      "clockSec": 1790884994,
+      "status": "match",
+      "chain": {
+        "baseOut": "20012366096192",
+        "sqrtPrice": "109898035155229730",
+        "quoteReserve": "4066141472",
+        "partnerFee": "33332445",
+        "creatorFee": "0",
+        "protocolFee": "8333106"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "20012366096192",
+        "sqrtPrice": "109898035155229730",
+        "quoteReserve": "4066141472",
+        "partnerFee": "33332445",
+        "creatorFee": "0",
+        "protocolFee": "8333106"
+      }
+    },
+    {
+      "pool": "8ZoML2QXNzs7ZHNupNPqRFo8qFxiWRsu7jdemWjyjEVG",
+      "config": "EC3rrAcUCEADXCKnFjHEpE5SH1f51axrc5GTY3f6RVrS",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "1960200000",
+      "clockSec": 1790884997,
+      "status": "match",
+      "chain": {
+        "baseOut": "5246218648286450",
+        "sqrtPrice": "8031740079694929",
+        "quoteReserve": "990000001",
+        "partnerFee": "8000001",
+        "creatorFee": "0",
+        "protocolFee": "2000000"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "5246218648286450",
+        "sqrtPrice": "8031740079694929",
+        "quoteReserve": "990000001",
+        "partnerFee": "8000001",
+        "creatorFee": "0",
+        "protocolFee": "2000000"
+      }
+    },
+    {
+      "pool": "D6ukAqiD2JWwMcfYYULvFDYMCsRB1kdLtXQ1bL6fZBD4",
+      "config": "AqJ8mtZAMLdjqK7fiUyquGAA5kuAGG5k9hLx4K3rntxV",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1444084456",
+      "clockSec": 1790885000,
+      "status": "match",
+      "chain": {
+        "baseOut": "105155071871289",
+        "sqrtPrice": "81322483682070122",
+        "quoteReserve": "1465985438",
+        "partnerFee": "6718501",
+        "creatorFee": "6718498",
+        "protocolFee": "3359249"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "105155071871289",
+        "sqrtPrice": "81322483682070122",
+        "quoteReserve": "1465985438",
+        "partnerFee": "6718501",
+        "creatorFee": "6718498",
+        "protocolFee": "3359249"
+      }
+    },
+    {
+      "pool": "9VhXC1t9jeetuxBqM6T6YN9SVSpbkoFBbRUnuTidEEDb",
+      "config": "77eEH7ygv8xb7dZEN3GsQhQLdpgTucWjhvNkfk727JYk",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "114386552",
+      "clockSec": 1790885006,
+      "status": "match",
+      "chain": {
+        "baseOut": "43245911541909",
+        "sqrtPrice": "30482595748383160",
+        "quoteReserve": "536619683",
+        "partnerFee": "80944776",
+        "creatorFee": "0",
+        "protocolFee": "20236193"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "43245911541909",
+        "sqrtPrice": "30482595748383160",
+        "quoteReserve": "536619683",
+        "partnerFee": "80944776",
+        "creatorFee": "0",
+        "protocolFee": "20236193"
+      }
+    },
+    {
+      "pool": "Awtu5Byke9SNJK3Si3R6QCoEpcEzPNi6x29aZiy6oBbU",
+      "config": "7YnxuEra8PU5PAR9LejNWohF87JHaLiR2Do4zenyk8nT",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "2547813284",
+      "clockSec": 1790885009,
+      "status": "match",
+      "chain": {
+        "baseOut": "72964667416746",
+        "sqrtPrice": "112520596868399056",
+        "quoteReserve": "3610299219",
+        "partnerFee": "30011252",
+        "creatorFee": "0",
+        "protocolFee": "7502813"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "72964667416746",
+        "sqrtPrice": "112520596868399056",
+        "quoteReserve": "3610299219",
+        "partnerFee": "30011252",
+        "creatorFee": "0",
+        "protocolFee": "7502813"
+      }
+    },
+    {
+      "pool": "13FzJVXN419ajeTsjKDxZeCYpk5KotvohRyhh2DF6uur",
+      "config": "J96VPM8b3zeCXza7oFHLqTkWG4x9xHJ3SKrM4nFNYeBb",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "24375000",
+      "clockSec": 1790885013,
+      "status": "match",
+      "chain": {
+        "baseOut": "61211284239126",
+        "sqrtPrice": "11951820690078429",
+        "quoteReserve": "49131250",
+        "partnerFee": "14136500",
+        "creatorFee": "6058500",
+        "protocolFee": "4048750"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "61211284239126",
+        "sqrtPrice": "11951820690078429",
+        "quoteReserve": "49131250",
+        "partnerFee": "14136500",
+        "creatorFee": "6058500",
+        "protocolFee": "4048750"
+      }
+    },
+    {
+      "pool": "5V9wUFYptPGLU4BTEyfdBCBEQ1SouJPySN4JXpugzd1w",
+      "config": "76NUFejVT9MQwrYLYdg1tCiouKZwVJcCXQreKTHphiwP",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "99999999998",
+      "clockSec": 1790885016,
+      "status": "match",
+      "chain": {
+        "baseOut": "798999985292621",
+        "sqrtPrice": "291668633435675794",
+        "quoteReserve": "50000000001",
+        "partnerFee": "817380649",
+        "creatorFee": "0",
+        "protocolFee": "204345161"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "798999985292621",
+        "sqrtPrice": "291668633435675794",
+        "quoteReserve": "50000000001",
+        "partnerFee": "817380649",
+        "creatorFee": "0",
+        "protocolFee": "204345161"
+      }
+    },
+    {
+      "pool": "DWBQXzGkidorHt75F1abGL9YxTN7tFwDmHWXWtQ9zH9G",
+      "config": "8Yz7bZkLojZyVPRqpBSzKK1muKVsQTGR8YHwR8aLTVe3",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1325002500",
+      "clockSec": 1790885018,
+      "status": "match",
+      "chain": {
+        "baseOut": "5195548483100902",
+        "sqrtPrice": "9273907185777264",
+        "quoteReserve": "2309002471",
+        "partnerFee": "10400012",
+        "creatorFee": "10400012",
+        "protocolFee": "5200005"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "5195548483100902",
+        "sqrtPrice": "9273907185777264",
+        "quoteReserve": "2309002471",
+        "partnerFee": "10400012",
+        "creatorFee": "10400012",
+        "protocolFee": "5200005"
+      }
+    },
+    {
+      "pool": "6MKZ1ZAgk3Zt8RF7uJjZ87D4hqwxopHZeXFgZPV1dK2U",
+      "config": "97kRpHCAduqg4n9LouBJ4LhCHwskzKQg4FU8Tu7XhAXS",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "25910889",
+      "clockSec": 1790885021,
+      "status": "match",
+      "chain": {
+        "baseOut": "23580621330424159",
+        "sqrtPrice": "675510168139143",
+        "quoteReserve": "25390610",
+        "partnerFee": "1208385",
+        "creatorFee": "0",
+        "protocolFee": "262488"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "23580621330424159",
+        "sqrtPrice": "675510168139143",
+        "quoteReserve": "25390610",
+        "partnerFee": "1208385",
+        "creatorFee": "0",
+        "protocolFee": "262488"
+      }
+    },
+    {
+      "pool": "HsHFXX7C6W9ZzMfjgCwfHc2NSnYwBLGMhvTkhwiRY2Z9",
+      "config": "2vVxQZnFJStwVzRzQJ1osmfE9k6pYSnWwn1a62HNHG54",
+      "baseFeeMode": 0,
+      "collectFeeMode": 1,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "5197500000",
+      "clockSec": 1790885024,
+      "status": "match",
+      "chain": {
+        "baseOut": "52938532891979988",
+        "sqrtPrice": "5878874460288016",
+        "quoteReserve": "5297500000",
+        "partnerFee": "436394059820120",
+        "creatorFee": "0",
+        "protocolFee": "109098514955029"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "52938532891979988",
+        "sqrtPrice": "5878874460288016",
+        "quoteReserve": "5297500000",
+        "partnerFee": "436394059820120",
+        "creatorFee": "0",
+        "protocolFee": "109098514955029"
+      }
+    },
+    {
+      "pool": "HmUeXKZ89doudoX1KoC8mAGYK6G1tM6xtuUmB2jv7unS",
+      "config": "84HzNxfXNgykEoA4PCC5v4zJZozK8u4CdoRCttSZR6UQ",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "452386863",
+      "clockSec": 1790885027,
+      "status": "match",
+      "chain": {
+        "baseOut": "40802721354216",
+        "sqrtPrice": "62358282712407796",
+        "quoteReserve": "2347864577",
+        "partnerFee": "23437626",
+        "creatorFee": "4560060",
+        "protocolFee": "15836224"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "40802721354216",
+        "sqrtPrice": "62358282712407796",
+        "quoteReserve": "2347864577",
+        "partnerFee": "23437626",
+        "creatorFee": "4560060",
+        "protocolFee": "15836224"
+      }
+    },
+    {
+      "pool": "Gv1azZnVQ1MykfZmJtwCDQA1wPByFGxCBtqjkjdU7tw6",
+      "config": "H5tERq2JbYXyPHhohRJVccYyuXs8UTC3ey647x2VgySq",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "169998040000",
+      "clockSec": 1790885031,
+      "status": "match",
+      "chain": {
+        "baseOut": "799963095870092",
+        "sqrtPrice": "380289371323205464",
+        "quoteReserve": "85000000001",
+        "partnerFee": "957551022",
+        "creatorFee": "430204081",
+        "protocolFee": "346938775"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "799963095870092",
+        "sqrtPrice": "380289371323205464",
+        "quoteReserve": "85000000001",
+        "partnerFee": "957551022",
+        "creatorFee": "430204081",
+        "protocolFee": "346938775"
+      }
+    },
+    {
+      "pool": "BsohEcVH8DqWbjwtUBfpZnSv6s2Y1qvL3yHrhFdBH1M7",
+      "config": "9UwPDPzof9jJmU9SZToABvPLV9jd8dEhxaQvqH9AqVA9",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "18995678",
+      "clockSec": 1790885033,
+      "status": "match",
+      "chain": {
+        "baseOut": "17595789130711626",
+        "sqrtPrice": "602855247254272",
+        "quoteReserve": "87215764",
+        "partnerFee": "1423932",
+        "creatorFee": "0",
+        "protocolFee": "355982"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "17595789130711626",
+        "sqrtPrice": "602855247254272",
+        "quoteReserve": "87215764",
+        "partnerFee": "1423932",
+        "creatorFee": "0",
+        "protocolFee": "355982"
+      }
+    },
+    {
+      "pool": "5c4YQgcdqiAeAwMLQkL7FJ1ELP5nYiKQiXh2Cq3YbCcm",
+      "config": "8Z6xjnd29QLxqwQPo7b1MFfMrX18aa7MWRUMx8YaBzUh",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "42331611",
+      "clockSec": 1790885037,
+      "status": "match",
+      "chain": {
+        "baseOut": "394085026306336",
+        "sqrtPrice": "8646920274707842",
+        "quoteReserve": "51205428",
+        "partnerFee": "16053823",
+        "creatorFee": "16053738",
+        "protocolFee": "8026780"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "394085026306336",
+        "sqrtPrice": "8646920274707842",
+        "quoteReserve": "51205428",
+        "partnerFee": "16053823",
+        "creatorFee": "16053738",
+        "protocolFee": "8026780"
+      }
+    },
+    {
+      "pool": "H7PjRMQgDGE6XjVZ8sd2o8DWcH8gzd1pQ1yKYYQ54wM7",
+      "config": "9UKrF87q3GQFBkPz5WmrwtmJayyVDejiaQ8Zt8hJ5qYM",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1985070901",
+      "clockSec": 1790885040,
+      "status": "match",
+      "chain": {
+        "baseOut": "68031741019704",
+        "sqrtPrice": "101789391028795260",
+        "quoteReserve": "2534548160",
+        "partnerFee": "48418194",
+        "creatorFee": "0",
+        "protocolFee": "12104547"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "68031741019704",
+        "sqrtPrice": "101789391028795260",
+        "quoteReserve": "2534548160",
+        "partnerFee": "48418194",
+        "creatorFee": "0",
+        "protocolFee": "12104547"
+      }
+    },
+    {
+      "pool": "FDU1g6tVR1zhPBvDk4WK2jAChSXxrDohpQ88eS1Nxjtq",
+      "config": "DhSnkiL7ERdmeGg5ZQk7o9ncoPmEt9cc1Bw7r9QswhCt",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "998208377",
+      "clockSec": 1790885043,
+      "status": "match",
+      "chain": {
+        "baseOut": "46160881578966",
+        "sqrtPrice": "86685086284361539",
+        "quoteReserve": "1171726501",
+        "partnerFee": "18007677",
+        "creatorFee": "3177824",
+        "protocolFee": "5296375"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "46160881578966",
+        "sqrtPrice": "86685086284361539",
+        "quoteReserve": "1171726501",
+        "partnerFee": "18007677",
+        "creatorFee": "3177824",
+        "protocolFee": "5296375"
+      }
+    },
+    {
+      "pool": "DJhGoVxGy8hkpgLPVx48wTfxjN25BrvVbh7Ph1CeoCNp",
+      "config": "4WPmZWnG6bvQLdvXM1AM5YyYTiugYkQ2jwFiN5Seyb7X",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "1323654248",
+      "clockSec": 1790885047,
+      "status": "match",
+      "chain": {
+        "baseOut": "431994258730252805",
+        "sqrtPrice": "824963474247118",
+        "quoteReserve": "828427125",
+        "partnerFee": "13525342",
+        "creatorFee": "0",
+        "protocolFee": "3381335"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "431994258730252805",
+        "sqrtPrice": "824963474247118",
+        "quoteReserve": "828427125",
+        "partnerFee": "13525342",
+        "creatorFee": "0",
+        "protocolFee": "3381335"
+      }
+    },
+    {
+      "pool": "DG7YqAm6m1sXr2hf8kdTKsyY1pxU8Ew7haLR6B34oh58",
+      "config": "3G1G36rLPtp5Lk58brknFKFo7BTBSXcXvBqCwxs9Kgzk",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "2125564605",
+      "clockSec": 1790885050,
+      "status": "match",
+      "chain": {
+        "baseOut": "52456564264237",
+        "sqrtPrice": "119041079306577224",
+        "quoteReserve": "2110001007",
+        "partnerFee": "7290176",
+        "creatorFee": "27506808",
+        "protocolFee": "9112719"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "52456564264237",
+        "sqrtPrice": "119041079306577224",
+        "quoteReserve": "2110001007",
+        "partnerFee": "7290176",
+        "creatorFee": "27506808",
+        "protocolFee": "9112719"
+      }
+    },
+    {
+      "pool": "41h4DPhGLJb7twWjAEofGvaN1jLKCvsTJXBBerPm1vjH",
+      "config": "12c3D5oZQQMFHKiAMREjhEePezTvFBmf1rHF5Mh9753o",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "19705300",
+      "clockSec": 1790885052,
+      "status": "match",
+      "chain": {
+        "baseOut": "11454403033603066",
+        "sqrtPrice": "792444565033130",
+        "quoteReserve": "29230836",
+        "partnerFee": "792379572",
+        "creatorFee": "0",
+        "protocolFee": "158494892"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "11454403033603066",
+        "sqrtPrice": "792444565033130",
+        "quoteReserve": "29230836",
+        "partnerFee": "792379572",
+        "creatorFee": "0",
+        "protocolFee": "158494892"
+      }
+    },
+    {
+      "pool": "FaqdJKyMSy2Ggi891E47cnwqk7Ko5qKAAKPSERbSZTtH",
+      "config": "6eeguA9f3hfniJMAciu3zFq92CTpkubcHy1b3WhGAmjk",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "247625000",
+      "clockSec": 1790885056,
+      "status": "match",
+      "chain": {
+        "baseOut": "20729552799910",
+        "sqrtPrice": "62504471849956397",
+        "quoteReserve": "330243750",
+        "partnerFee": "13905000",
+        "creatorFee": "0",
+        "protocolFee": "3476250"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "20729552799910",
+        "sqrtPrice": "62504471849956397",
+        "quoteReserve": "330243750",
+        "partnerFee": "13905000",
+        "creatorFee": "0",
+        "protocolFee": "3476250"
+      }
+    },
+    {
+      "pool": "CWvabk389N3FWwvwkR3CwjHWan5b2RDGG5UESV7KdALp",
+      "config": "6aa7hjzKpkrqPYX3xc268stMAN3PaFdTU28ZqnL9gwYQ",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "2112625000",
+      "clockSec": 1790885058,
+      "status": "match",
+      "chain": {
+        "baseOut": "70913183161170814",
+        "sqrtPrice": "3280906275188702",
+        "quoteReserve": "2586498750",
+        "partnerFee": "10450500",
+        "creatorFee": "10450500",
+        "protocolFee": "5225250"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "70913183161170814",
+        "sqrtPrice": "3280906275188702",
+        "quoteReserve": "2586498750",
+        "partnerFee": "10450500",
+        "creatorFee": "10450500",
+        "protocolFee": "5225250"
+      }
+    },
+    {
+      "pool": "6YHRjaJxJ7g2v1YxRcPLmWV28CRp1ownTuFkg2FUxn7D",
+      "config": "4qbt69huth9mzCxb5aAiC8k9XYXzGwnMmWF7yHp33KnH",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "16558667494",
+      "clockSec": 1790885062,
+      "status": "match",
+      "chain": {
+        "baseOut": "585291165895751480",
+        "sqrtPrice": "2608763565066556",
+        "quoteReserve": "8284271248",
+        "partnerFee": "41945678",
+        "creatorFee": "41945678",
+        "protocolFee": "20972838"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "585291165895751480",
+        "sqrtPrice": "2608763565066556",
+        "quoteReserve": "8284271248",
+        "partnerFee": "41945678",
+        "creatorFee": "41945678",
+        "protocolFee": "20972838"
+      }
+    },
+    {
+      "pool": "4v3nUir3tEvf1vW4e5aeff3DgVvNJLy6iwPztvkxmUiX",
+      "config": "CGeiSFDoxn7rX1yf4a7w7EZJNVYHaHUwoc1QegnSL7Hd",
+      "baseFeeMode": 0,
+      "collectFeeMode": 1,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "249950000",
+      "clockSec": 1790885064,
+      "status": "match",
+      "chain": {
+        "baseOut": "38698002176",
+        "sqrtPrice": "1491873535506293783",
+        "quoteReserve": "251950000",
+        "partnerFee": "509623515",
+        "creatorFee": "127405877",
+        "protocolFee": "159257347"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "38698002176",
+        "sqrtPrice": "1491873535506293783",
+        "quoteReserve": "251950000",
+        "partnerFee": "509623515",
+        "creatorFee": "127405877",
+        "protocolFee": "159257347"
+      }
+    },
+    {
+      "pool": "4nbSY9Jd7LAD15a9XgU5T4sXWHEjkKr4R6YZkhxsn8t3",
+      "config": "TrdhCoiinGpcKKU8DBBwVp6oqdXYCEBswkUsqGEDfn7",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1603428227",
+      "clockSec": 1790885067,
+      "status": "match",
+      "chain": {
+        "baseOut": "55855904967793310",
+        "sqrtPrice": "3174876747541455",
+        "quoteReserve": "1581159548",
+        "partnerFee": "12907472",
+        "creatorFee": "12907470",
+        "protocolFee": "6453735"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "55855904967793310",
+        "sqrtPrice": "3174876747541455",
+        "quoteReserve": "1581159548",
+        "partnerFee": "12907472",
+        "creatorFee": "12907470",
+        "protocolFee": "6453735"
+      }
+    },
+    {
+      "pool": "7nxDMbBnVLWQ4aRPqAQm9rJyv9kZ6CtnaffP85QxZFuc",
+      "config": "3LAEK7vK5SJJTrC4Q7SefEwqUfbBzAs1yL1U6r4w6GQA",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "18250000",
+      "clockSec": 1790885071,
+      "status": "match",
+      "chain": {
+        "baseOut": "16897934088541",
+        "sqrtPrice": "19215786952316589",
+        "quoteReserve": "287810482",
+        "partnerFee": "4870323",
+        "creatorFee": "16226251",
+        "protocolFee": "4887903"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "16897934088541",
+        "sqrtPrice": "19215786952316589",
+        "quoteReserve": "287810482",
+        "partnerFee": "4870323",
+        "creatorFee": "16226251",
+        "protocolFee": "4887903"
+      }
+    },
+    {
+      "pool": "3stC3cRdNATnmBCKXGFmEydpsgmVM6QMbBY8JXzY4mf1",
+      "config": "8jZocCowQ7xZwdWHPjqLpUmiBDDaxySu5tqHJbynepZs",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "2074589",
+      "clockSec": 1790885074,
+      "status": "match",
+      "chain": {
+        "baseOut": "65451124210775",
+        "sqrtPrice": "3394303881847957",
+        "quoteReserve": "6493820",
+        "partnerFee": "16597",
+        "creatorFee": "0",
+        "protocolFee": "238283"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "65451124210775",
+        "sqrtPrice": "3394303881847957",
+        "quoteReserve": "6493820",
+        "partnerFee": "16597",
+        "creatorFee": "0",
+        "protocolFee": "238283"
+      }
+    },
+    {
+      "pool": "9Sz6aXKgCWaq2LsBJ6i7Y83YSuJ3j8hPdTqnxjkEuXSL",
+      "config": "2pC4Z6hV2i1wEY3bsFFfVAo9Uu5c4UMdJYs5NP2uGPbc",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "471730460432",
+      "clockSec": 1790885077,
+      "status": "match",
+      "chain": {
+        "baseOut": "717535243613456617",
+        "sqrtPrice": "18446744073709552",
+        "quoteReserve": "240253073354",
+        "partnerFee": "1801740457",
+        "creatorFee": "317954192",
+        "protocolFee": "529923654"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "717535243613456617",
+        "sqrtPrice": "18446744073709552",
+        "quoteReserve": "240253073354",
+        "partnerFee": "1801740457",
+        "creatorFee": "317954192",
+        "protocolFee": "529923654"
+      }
+    },
+    {
+      "pool": "pV1vRFTLwCNjNxBqoWiiJqnVbndxF5KaTEv2arF5r9K",
+      "config": "GYrXCehFppWqKgQcjXiCLSk3t822BbciTmQcjEFuK5a8",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1663936346",
+      "clockSec": 1790885081,
+      "status": "match",
+      "chain": {
+        "baseOut": "79078986652747",
+        "sqrtPrice": "87526667138186398",
+        "quoteReserve": "1647296983",
+        "partnerFee": "12661042",
+        "creatorFee": "666370",
+        "protocolFee": "3331056"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "79078986652747",
+        "sqrtPrice": "87526667138186398",
+        "quoteReserve": "1647296983",
+        "partnerFee": "12661042",
+        "creatorFee": "666370",
+        "protocolFee": "3331056"
+      }
+    },
+    {
+      "pool": "AFFLa5pycnLWE7LM9fjnNrQUKrY8XLvCKbK3duGq5JYa",
+      "config": "5ToiVYmbSEJfZpsw6gXqckPibNu9GYHGgSHbDUZ9m39R",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "49975250",
+      "clockSec": 1790885082,
+      "status": "match",
+      "chain": {
+        "baseOut": "428046288609191",
+        "sqrtPrice": "8338379857009705",
+        "quoteReserve": "50465497",
+        "partnerFee": "407803",
+        "creatorFee": "0",
+        "protocolFee": "101950"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "428046288609191",
+        "sqrtPrice": "8338379857009705",
+        "quoteReserve": "50465497",
+        "partnerFee": "407803",
+        "creatorFee": "0",
+        "protocolFee": "101950"
+      }
+    },
+    {
+      "pool": "9k7YRQmvhYipiMfjKBiRU1Tn6RH4yMBuefbucBb3f9Fs",
+      "config": "6L387xCJnieL7QCgPrGPyC4SSBySShsx28axyLEntpm7",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "710919011",
+      "clockSec": 1790885086,
+      "status": "match",
+      "chain": {
+        "baseOut": "350422859238323938",
+        "sqrtPrice": "1076004178647545",
+        "quoteReserve": "809557675",
+        "partnerFee": "6541884",
+        "creatorFee": "0",
+        "protocolFee": "1635469"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "350422859238323938",
+        "sqrtPrice": "1076004178647545",
+        "quoteReserve": "809557675",
+        "partnerFee": "6541884",
+        "creatorFee": "0",
+        "protocolFee": "1635469"
+      }
+    },
+    {
+      "pool": "7XGZh5tcKG8yqav18FZvqDRBLiXSaqH7kpjL59FhtY22",
+      "config": "2nwZuYuoxfhGaTjyX7WvCZmgBEZ29ATjgQcCXsTcidRf",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1792082241",
+      "clockSec": 1790885088,
+      "status": "match",
+      "chain": {
+        "baseOut": "54882648962792",
+        "sqrtPrice": "107604767190822705",
+        "quoteReserve": "2166793770",
+        "partnerFee": "2319643",
+        "creatorFee": "20875087",
+        "protocolFee": "5798608"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "54882648962792",
+        "sqrtPrice": "107604767190822705",
+        "quoteReserve": "2166793770",
+        "partnerFee": "2319643",
+        "creatorFee": "20875087",
+        "protocolFee": "5798608"
+      }
+    },
+    {
+      "pool": "5T5gwjyR3UrsFtXW2TkNXNdqgoUajP5BpY64uETJobU9",
+      "config": "TrdhCoiinGpcKKU8DBBwVp6oqdXYCEBswkUsqGEDfn7",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "128274258222",
+      "clockSec": 1790885091,
+      "status": "match",
+      "chain": {
+        "baseOut": "759371959116977709",
+        "sqrtPrice": "9531809480255601",
+        "quoteReserve": "64146929110",
+        "partnerFee": "523650246",
+        "creatorFee": "523650244",
+        "protocolFee": "261825122"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "759371959116977709",
+        "sqrtPrice": "9531809480255601",
+        "quoteReserve": "64146929110",
+        "partnerFee": "523650246",
+        "creatorFee": "523650244",
+        "protocolFee": "261825122"
+      }
+    },
+    {
+      "pool": "8icp6AazUyw8iyhTxGnNt7QfkzYPaCRthYLFwBFBHDAL",
+      "config": "CAqdvkGcocQ2pxGLVNpZTZ46b2u9fs1t3ERjfzbwTDZ9",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "249563753",
+      "clockSec": 1790885093,
+      "status": "match",
+      "chain": {
+        "baseOut": "71494733766418",
+        "sqrtPrice": "35148459962687849",
+        "quoteReserve": "259526685",
+        "partnerFee": "1197907",
+        "creatorFee": "4791624",
+        "protocolFee": "1629083"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "71494733766418",
+        "sqrtPrice": "35148459962687849",
+        "quoteReserve": "259526685",
+        "partnerFee": "1197907",
+        "creatorFee": "4791624",
+        "protocolFee": "1629083"
+      }
+    },
+    {
+      "pool": "6VbA5MbVu5pNHdZQkvJMe2jTqsbzUeeysbMUz4hm2CbW",
+      "config": "5Ypo9Go7z4jrFszr5K8jJsEaU6GNR82E3jWe3ha75GTd",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "2308647331",
+      "clockSec": 1790885097,
+      "status": "match",
+      "chain": {
+        "baseOut": "768996099969093",
+        "sqrtPrice": "3197366037458981",
+        "quoteReserve": "23086478",
+        "partnerFee": "1828448687",
+        "creatorFee": "0",
+        "protocolFee": "1853072169"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "768996099969093",
+        "sqrtPrice": "3197366037458981",
+        "quoteReserve": "23086478",
+        "partnerFee": "1828448687",
+        "creatorFee": "0",
+        "protocolFee": "1853072169"
+      }
+    },
+    {
+      "pool": "9gs1ApT6WnyZJ6JoUvFfvbEpg1StFu8eeWUdYeNQ2Pky",
+      "config": "5vdgkegqGS4DicjFcrRwyrS6GRAqapYFepsh3DYonVB9",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "5813876250",
+      "clockSec": 1790885100,
+      "status": "match",
+      "chain": {
+        "baseOut": "662085785378716986",
+        "sqrtPrice": "1760417472104369",
+        "quoteReserve": "5760687487",
+        "partnerFee": "46551011",
+        "creatorFee": "0",
+        "protocolFee": "11637752"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "662085785378716986",
+        "sqrtPrice": "1760417472104369",
+        "quoteReserve": "5760687487",
+        "partnerFee": "46551011",
+        "creatorFee": "0",
+        "protocolFee": "11637752"
+      }
+    },
+    {
+      "pool": "4xenYiuq1gvA2DSQZFQqZePFQXjYBK1JcsTT7XLame26",
+      "config": "5qTAxqiiWxVTp5u2o6MGEzeN4xCtCqYCojisctcD2VrH",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": true,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "1801098625",
+      "clockSec": 1790885103,
+      "status": "match",
+      "chain": {
+        "baseOut": "56312942340129",
+        "sqrtPrice": "106538637779176267",
+        "quoteReserve": "1815064627",
+        "partnerFee": "1474527",
+        "creatorFee": "13270683",
+        "protocolFee": "3686300"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "56312942340129",
+        "sqrtPrice": "106538637779176267",
+        "quoteReserve": "1815064627",
+        "partnerFee": "1474527",
+        "creatorFee": "13270683",
+        "protocolFee": "3686300"
+      }
+    },
+    {
+      "pool": "EmaoLqpQa5gHWAPAK7jT7KdKPBzLDgbFvc6LG6WaBsme",
+      "config": "2cqf5FqhaqgVEjcWgmQdTSHrDCSJ5Ntb4B1jEJk97cmN",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "65261204232",
+      "clockSec": 1790885107,
+      "status": "match",
+      "chain": {
+        "baseOut": "616110538077053",
+        "sqrtPrice": "170070577079869305",
+        "quoteReserve": "32630602118",
+        "partnerFee": "75422761",
+        "creatorFee": "175986441",
+        "protocolFee": "62852300"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "616110538077053",
+        "sqrtPrice": "170070577079869305",
+        "quoteReserve": "32630602118",
+        "partnerFee": "75422761",
+        "creatorFee": "175986441",
+        "protocolFee": "62852300"
+      }
+    },
+    {
+      "pool": "9HpxaYfTCUDXNExYTngrXpwHGK9PrxFt5bHfAyyLZToB",
+      "config": "6CNzdMshLACSYT675wN2SdjoyWM3K8SceYurzg73MfSn",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "23762500",
+      "clockSec": 1790885110,
+      "status": "match",
+      "chain": {
+        "baseOut": "33423398027562458",
+        "sqrtPrice": "494847869737377",
+        "quoteReserve": "73024875",
+        "partnerFee": "590100",
+        "creatorFee": "0",
+        "protocolFee": "147525"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "33423398027562458",
+        "sqrtPrice": "494847869737377",
+        "quoteReserve": "73024875",
+        "partnerFee": "590100",
+        "creatorFee": "0",
+        "protocolFee": "147525"
+      }
+    },
+    {
+      "pool": "Hy6HqRcDNhGFmRdMr89B2uRiNHDhNLydz258rXoc1zaz",
+      "config": "2BLMeUdkkoVTMryT1iz4j5HrBSfFbAsAmPRwCRVKtqb7",
+      "baseFeeMode": 1,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "55891687",
+      "clockSec": 1790885113,
+      "status": "match",
+      "chain": {
+        "baseOut": "61913350264247",
+        "sqrtPrice": "17924390208190156",
+        "quoteReserve": "64903311",
+        "partnerFee": "158141",
+        "creatorFee": "632560",
+        "protocolFee": "197675"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "61913350264247",
+        "sqrtPrice": "17924390208190156",
+        "quoteReserve": "64903311",
+        "partnerFee": "158141",
+        "creatorFee": "632560",
+        "protocolFee": "197675"
+      }
+    },
+    {
+      "pool": "GaywaKGLBw8RZ4mUkzwHM7ce9WdrEdFn7abpprsGofCH",
+      "config": "8rgJebAvGwGbcKk9HSJqgtm3nkrSH7mziSN2wPSSfi9z",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "20710657",
+      "clockSec": 1790885115,
+      "status": "match",
+      "chain": {
+        "baseOut": "20295130558803783",
+        "sqrtPrice": "589322571197062",
+        "quoteReserve": "20503551",
+        "partnerFee": "324886",
+        "creatorFee": "0",
+        "protocolFee": "81221"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "20295130558803783",
+        "sqrtPrice": "589322571197062",
+        "quoteReserve": "20503551",
+        "partnerFee": "324886",
+        "creatorFee": "0",
+        "protocolFee": "81221"
+      }
+    },
+    {
+      "pool": "GPsvXHaRLizEZDHt4xtLjdKp6PU8wjUYGjnTW9CMecKv",
+      "config": "7J4P4qtTogZcB4VsmRE2fg3C9irZeCkCSE134HBV54xr",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "exactIn",
+      "amountIn": "715761235",
+      "clockSec": 1790885121,
+      "status": "match",
+      "chain": {
+        "baseOut": "28948933441896",
+        "sqrtPrice": "92323526753356937",
+        "quoteReserve": "2978064219",
+        "partnerFee": "27141852",
+        "creatorFee": "3015761",
+        "protocolFee": "7539403"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "28948933441896",
+        "sqrtPrice": "92323526753356937",
+        "quoteReserve": "2978064219",
+        "partnerFee": "27141852",
+        "creatorFee": "3015761",
+        "protocolFee": "7539403"
+      }
+    },
+    {
+      "pool": "dciQV48szp64KcG858j83o5HYEQ46wNfGPyegiRs9zq",
+      "config": "5t7SF97FNtNdo6ogPS3cnJLC4ACi6iBdRjPJk7sJgtYA",
+      "baseFeeMode": 0,
+      "collectFeeMode": 0,
+      "dynamicFee": false,
+      "scheduleActive": false,
+      "mode": "partialFill",
+      "amountIn": "169998040000",
+      "clockSec": 1790885122,
+      "status": "match",
+      "chain": {
+        "baseOut": "799963095870092",
+        "sqrtPrice": "380289371323205464",
+        "quoteReserve": "85000000001",
+        "partnerFee": "1387755103",
+        "creatorFee": "0",
+        "protocolFee": "346938775"
+      },
+      "timeShiftSecUsed": 0,
+      "sim": {
+        "baseOut": "799963095870092",
+        "sqrtPrice": "380289371323205464",
+        "quoteReserve": "85000000001",
+        "partnerFee": "1387755103",
+        "creatorFee": "0",
+        "protocolFee": "346938775"
+      }
+    }
+  ]
+}

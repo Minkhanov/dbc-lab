@@ -8,8 +8,38 @@ import { explorerAddr, explorerTx, loadState, solscanTx } from "../src/devnet/co
 
 const root = path.resolve(import.meta.dirname, "..");
 const state = loadState();
-const confPath = path.join(root, "devnet-run", "conformance.json");
-const conf = fs.existsSync(confPath) ? (JSON.parse(fs.readFileSync(confPath, "utf8")) as { summary: Record<string, unknown>; records: any[] }) : null;
+// merge every devnet-run/conformance-seed*.json (dedupe by pool address, later runs win)
+const runDir = path.join(root, "devnet-run");
+const confFiles = fs.existsSync(runDir) ? fs.readdirSync(runDir).filter((f) => /^conformance-seed\d+\.json$/.test(f)).sort() : [];
+const merged = new Map<string, any>();
+const seeds: string[] = [];
+for (const f of confFiles) {
+  const j = JSON.parse(fs.readFileSync(path.join(runDir, f), "utf8")) as { summary: Record<string, unknown>; records: any[] };
+  seeds.push(`${f.replace(/^conformance-|\.json$/g, "")}: ${j.records.length} pools`);
+  for (const r of j.records) merged.set(r.pool, r);
+}
+const mrecords = [...merged.values()];
+const cnt = (st: string) => mrecords.filter((r) => r.status === st).length;
+const conf =
+  mrecords.length > 0
+    ? {
+        summary: {
+          runs: seeds.join("; "),
+          testedPools: mrecords.length,
+          match: cnt("match"),
+          mismatch: cnt("mismatch"),
+          simError: cnt("sim-error"),
+          chainError: cnt("chain-error"),
+          matchedWithClockShift: mrecords.filter((r) => r.status === "match" && (r.timeShiftSecUsed ?? 0) !== 0).length,
+          withDynamicFee: mrecords.filter((r) => r.dynamicFee).length,
+          outputTokenMode: mrecords.filter((r) => r.collectFeeMode === 1).length,
+          exponentialScheduler: mrecords.filter((r) => r.baseFeeMode === 1).length,
+          partialFill: mrecords.filter((r) => r.mode === "partialFill").length,
+          scheduleStillDecaying: mrecords.filter((r) => r.scheduleActive).length,
+        } as Record<string, number | string>,
+        records: mrecords,
+      }
+    : null;
 const dryPath = path.join(root, "devnet-run", "dryrun-config.txt");
 const dry = fs.existsSync(dryPath) ? fs.readFileSync(dryPath, "utf8").trim() : null;
 
@@ -68,16 +98,15 @@ if (!state.config) {
     push();
     push("`chain` = tokens actually received (change of the buyer's token account); `sdk` = SDK `swapQuote2` taken just before sending; `sim` = this repo's simulator replayed at the on-chain block time of the transaction.");
     push();
-    push("| # | mode | in (SOL) | chain out | sdk quote | sim out | sqrt price equal | reserve equal | fee accumulators equal |");
-    push("|---|---|---|---|---|---|---|---|---|");
+    push("| # | mode | in (SOL) | pool age (s) | fee period | chain out | sdk quote | sim out | replay from real pre-state | cumulative sim path |");
+    push("|---|---|---|---|---|---|---|---|---|---|");
     for (const b of state.buys) {
-      const feeEq = JSON.stringify(b.chainFees) === JSON.stringify(b.simFees);
       push(
-        `| ${b.index} | ${b.mode} | ${Number(b.amountInLamports) / 1e9} | ${b.chainBaseOut} | ${b.sdkQuoteBaseOut} | ${b.simBaseOut} | ${b.chainSqrtPriceAfter === b.simSqrtPriceAfter ? "yes" : "NO"} | ${b.chainQuoteReserve === b.simQuoteReserve ? "yes" : "NO"} | ${feeEq ? "yes" : "NO"} |`,
+        `| ${b.index} | ${b.mode} | ${Number(b.amountInLamports) / 1e9} | ${b.poolAgeSec} | ${b.schedulePeriod ?? "-"} | ${b.chainBaseOut} | ${b.sdkQuoteBaseOut} | ${b.simBaseOut} | ${b.independentMatch ? "equal" : "DIFF"} | ${b.cumulativeMatch ? "equal" : "DIFF"} |`,
       );
     }
     push();
-    const diffs = state.buys.filter((b) => b.chainBaseOut !== b.simBaseOut).length;
+    const diffs = state.buys.filter((b) => !b.independentMatch).length;
     push(`Trades where simulator output differs from the chain: **${diffs} of ${state.buys.length}**.`);
     push();
   }
@@ -117,10 +146,10 @@ push("`scripts/conformance-devnet.ts` samples live pools from the 85k DBC pools 
 push("simulates it against the deployed program (unsigned, nothing sent) and compares the program's post-state with the simulator replaying the same buy from the pool's pre-state.");
 push();
 if (conf) {
-  const s = conf.summary as Record<string, number | string>;
+  const s = conf.summary;
   push("| metric | value |");
   push("|---|---|");
-  for (const k of ["when", "seed", "testedPools", "match", "mismatch", "simError", "chainError", "matchedWithClockShift", "withDynamicFee", "outputTokenMode", "exponentialScheduler", "partialFill"]) {
+  for (const k of ["runs", "testedPools", "match", "mismatch", "simError", "chainError", "matchedWithClockShift", "withDynamicFee", "outputTokenMode", "exponentialScheduler", "partialFill", "scheduleStillDecaying"]) {
     push(`| ${k} | ${s[k]} |`);
   }
   push();

@@ -116,8 +116,17 @@ export interface BuyRecord {
   simQuoteReserve: string;
   chainFees: { partnerQuote: string; creatorQuote: string; protocolQuote: string };
   simFees: { partnerQuote: string; creatorQuote: string; protocolQuote: string };
-  chainIncludedIn: string;
+  /** fee numerator (1e9 denominator) the simulator applied at the on-chain block time */
   simIncludedIn: string;
+  /** clock shift (seconds) needed to reproduce the chain result; 0 normally */
+  clockShift: number;
+  /** the per-trade replay started from the REAL pre-trade pool state and matched every compared field */
+  independentMatch: boolean;
+  /** the accumulated simulator path (continuing from its own previous state) still equals the chain */
+  cumulativeMatch: boolean;
+  /** pool age in seconds at the trade, and scheduler period index (null = no schedule) */
+  poolAgeSec: number;
+  schedulePeriod: number | null;
 }
 
 export interface RunState {

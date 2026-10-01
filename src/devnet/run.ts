@@ -23,6 +23,9 @@ import { getPreset } from "../presets/library.js";
 import { buildLaunch } from "../presets/build.js";
 import { simConfigFromAccount } from "../sim/fromSdk.js";
 import { buy, initPool, isCurveComplete } from "../sim/pool.js";
+import { baseTokenForSwap } from "../sim/curve.js";
+import { migrationOutcome } from "../sim/migration.js";
+import { poolStateFromAccount } from "../sim/fromSdk.js";
 import type { SimConfig } from "../sim/types.js";
 import {
   COMMITMENT,
@@ -111,6 +114,8 @@ async function stageConfig(state: RunState): Promise<void> {
     ...cmp("sqrtStartPrice", chainSim.sqrtStartPrice, sim.sqrtStartPrice),
     ...cmp("cliffFeeNumerator", chainSim.baseFee.cliffFeeNumerator, sim.baseFee.cliffFeeNumerator),
     ...cmp("curveSegments", BigInt(chainSim.curve.length), BigInt(sim.curve.length)),
+    ...cmp("swapBaseAmount", bnToBig(acc.swapBaseAmount), baseTokenForSwap(sim.sqrtStartPrice, sim.migrationSqrtPrice, sim.curve)),
+    ...cmp("migrationBaseThreshold", bnToBig(acc.migrationBaseThreshold), migrationOutcome(sim).baseIncludedProtocolFee),
   };
   saveState(state);
 }
@@ -222,7 +227,7 @@ async function stageBuys(state: RunState): Promise<void> {
   const simPool = initPool(sim, activationPoint);
   state.buys ??= [];
   for (const b of state.buys) {
-    buy(sim, simPool, BigInt(b.amountInLamports), b.mode, BigInt(b.point), BigInt(b.point));
+    buy(sim, simPool, BigInt(b.amountInLamports), b.mode, BigInt(b.point + b.clockShift), BigInt(b.point + b.clockShift));
   }
 
   const plan = buyPlan(sim);
@@ -250,6 +255,7 @@ async function stageBuys(state: RunState): Promise<void> {
     });
 
     const balBefore = await tokenBalance(conn, baseAta);
+    const preChain = poolStateFromAccount(live as never); // REAL pre-trade state
     const tx = await client.pool.swap2({
       owner: payer.publicKey,
       payer: payer.publicKey,
@@ -264,11 +270,33 @@ async function stageBuys(state: RunState): Promise<void> {
     const balAfter = await tokenBalance(conn, baseAta);
     const chainOut = balAfter - balBefore;
     const snap = await readPoolSnapshot(client, pool);
+    const chainFees = { partnerQuote: snap.partnerQuote.toString(), creatorQuote: snap.creatorQuote.toString(), protocolQuote: snap.protocolQuote.toString() };
 
-    // sim step at the on-chain block time of this very transaction
+    // (a) independent check: replay THIS trade from the real pre-trade state, at the on-chain block time (try +-1 s if a fee period boundary was crossed)
     const point = BigInt(res.blockTime ?? Math.floor(Date.now() / 1000));
-    const simRes = buy(sim, simPool, step.lamports, step.mode, point, point);
+    let indep: { res: ReturnType<typeof buy>; pool: typeof simPool; shift: number } | undefined;
+    for (const shift of [0, -1, 1]) {
+      const p0 = structuredClone(preChain);
+      const r0 = buy(sim, p0, step.lamports, step.mode, point + BigInt(shift), point + BigInt(shift));
+      const same =
+        r0.baseOut === chainOut &&
+        p0.sqrtPrice === snap.sqrtPrice &&
+        p0.quoteReserve === snap.quoteReserve &&
+        p0.partnerQuoteFee === snap.partnerQuote &&
+        p0.creatorQuoteFee === snap.creatorQuote &&
+        p0.protocolQuoteFee === snap.protocolQuote;
+      if (!indep || same) indep = { res: r0, pool: p0, shift };
+      if (same) break;
+    }
+    const independentMatch =
+      indep!.res.baseOut === chainOut && indep!.pool.sqrtPrice === snap.sqrtPrice && indep!.pool.quoteReserve === snap.quoteReserve &&
+      indep!.pool.partnerQuoteFee === snap.partnerQuote && indep!.pool.creatorQuoteFee === snap.creatorQuote && indep!.pool.protocolQuoteFee === snap.protocolQuote;
 
+    // (b) cumulative path: the simulator continuing from its own previous state
+    const simRes = buy(sim, simPool, step.lamports, step.mode, point + BigInt(indep!.shift), point + BigInt(indep!.shift));
+    const cumulativeMatch = simRes.baseOut === chainOut && simPool.sqrtPrice === snap.sqrtPrice && simPool.quoteReserve === snap.quoteReserve;
+
+    const fc = indep!.pool;
     const rec: BuyRecord = {
       index: i,
       mode: step.mode,
@@ -276,21 +304,25 @@ async function stageBuys(state: RunState): Promise<void> {
       tx: toRecord(`swap2 #${i}`, res),
       point: Number(point),
       sdkQuoteBaseOut: sdkQuote.outputAmount.toString(),
-      simBaseOut: simRes.baseOut.toString(),
+      simBaseOut: indep!.res.baseOut.toString(),
       chainBaseOut: chainOut.toString(),
-      simFeeNumerator: simRes.feeNumerator.toString(),
+      simFeeNumerator: indep!.res.feeNumerator.toString(),
       chainSqrtPriceAfter: snap.sqrtPrice.toString(),
-      simSqrtPriceAfter: simPool.sqrtPrice.toString(),
+      simSqrtPriceAfter: fc.sqrtPrice.toString(),
       chainQuoteReserve: snap.quoteReserve.toString(),
-      simQuoteReserve: simPool.quoteReserve.toString(),
-      chainFees: { partnerQuote: snap.partnerQuote.toString(), creatorQuote: snap.creatorQuote.toString(), protocolQuote: snap.protocolQuote.toString() },
-      simFees: { partnerQuote: simPool.partnerQuoteFee.toString(), creatorQuote: simPool.creatorQuoteFee.toString(), protocolQuote: simPool.protocolQuoteFee.toString() },
-      chainIncludedIn: "", // filled below from the pool's reserve delta (fee-excluded) + fees
-      simIncludedIn: simRes.includedFeeInput.toString(),
+      simQuoteReserve: fc.quoteReserve.toString(),
+      chainFees,
+      simFees: { partnerQuote: fc.partnerQuoteFee.toString(), creatorQuote: fc.creatorQuoteFee.toString(), protocolQuote: fc.protocolQuoteFee.toString() },
+      simIncludedIn: indep!.res.includedFeeInput.toString(),
+      clockShift: indep!.shift,
+      independentMatch,
+      cumulativeMatch,
+      poolAgeSec: Number(point - activationPoint),
+      schedulePeriod: sim.baseFee.periodFrequency > 0n && sim.baseFee.numberOfPeriod > 0 ? Number((point - activationPoint) / sim.baseFee.periodFrequency) : null,
     };
     state.buys.push(rec);
     saveState(state);
-    const ok = rec.chainBaseOut === rec.simBaseOut && rec.chainSqrtPriceAfter === rec.simSqrtPriceAfter;
+    const ok = rec.independentMatch && rec.cumulativeMatch;
     console.log(
       `buy #${i} ${step.mode} ${Number(step.lamports) / 1e9} SOL -> chain ${chainOut} | sim ${simRes.baseOut} | sdk ${sdkQuote.outputAmount} | ${ok ? "MATCH" : "DIFF"} | ${explorerTx(res.sig)}`,
     );
