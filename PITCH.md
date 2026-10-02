@@ -27,6 +27,7 @@ Checked against the deployed DBC program on devnet with unsigned `simulateTransa
 | Fee decay timing (program clock) | 6 / 6 match |
 | DAMM v2 opening price after migration | **37 / 37 match** |
 | Config validation | 5 / 5 presets accepted by the program |
+| **Own launch on devnet, signed transactions** (2 Oct 2026): config → pool → 11 buys → migration to DAMM v2 | **11 / 11 buys: chain = simulator = SDK to the unit; DAMM v2 opening price equals the DBC migration price exactly** |
 
 Details: [`DEVNET-PROOF.md`](DEVNET-PROOF.md), sources: [`NOTES.md`](NOTES.md). 32 unit tests.
 
@@ -34,7 +35,7 @@ Details: [`DEVNET-PROOF.md`](DEVNET-PROOF.md), sources: [`NOTES.md`](NOTES.md). 
 1. Sells and referral fees in the simulator, vesting/locker support, more presets.
 2. **Pool inspector** (read-only): paste any mainnet or devnet pool address — current state, progress to
    migration, live fee, "what if I buy X", and a simulator-vs-program conformance badge.
-3. Web UI with preset comparison and one-click config export; own devnet config → pool → buys → DAMM v2 migration run.
+3. Web UI with preset comparison and one-click config export. (Own devnet config → pool → buys → DAMM v2 migration run: **done 2 Oct**, see DEVNET-PROOF.md.)
 4. Video walkthrough.
 
 ## Why it matters
