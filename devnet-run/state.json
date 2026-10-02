@@ -1,0 +1,476 @@
+{
+  "presetId": "devnet-micro",
+  "payer": "EaF7jiLSjxvKNr76VmPM8aWucP1j5i8A6eM6WUjX3LRE",
+  "startedAt": "2026-10-02T06:27:23.398Z",
+  "config": {
+    "address": "FwNgepD3vqiwYMwkhMFrhmDg3xPXnCGM5iJ6eRTXWEyJ",
+    "tx": {
+      "label": "create_config",
+      "sig": "oca1oaM8AmAcQCA3XyUVaZR9fXCmMGqm4CXNUpgDSmpPojQj8uDQ1DDAV1v4Jvke4XbG2y9gkGV8t3WgBMpJ8cA",
+      "slot": 506548585,
+      "blockTime": 1790922442
+    }
+  },
+  "configCheck": {
+    "migrationSqrtPrice": {
+      "chain": "18446744073709551",
+      "sim": "18446744073709551",
+      "equal": true
+    },
+    "migrationQuoteThreshold": {
+      "chain": "200000000",
+      "sim": "200000000",
+      "equal": true
+    },
+    "sqrtStartPrice": {
+      "chain": "4611687360628964",
+      "sim": "4611687360628964",
+      "equal": true
+    },
+    "cliffFeeNumerator": {
+      "chain": "50000000",
+      "sim": "50000000",
+      "equal": true
+    },
+    "curveSegments": {
+      "chain": "2",
+      "sim": "2",
+      "equal": true
+    },
+    "swapBaseAmount": {
+      "chain": "799999767165210",
+      "sim": "799999767165210",
+      "equal": true
+    },
+    "migrationBaseThreshold": {
+      "chain": "200000046566969",
+      "sim": "200000046566969",
+      "equal": true
+    }
+  },
+  "baseMint": "7M4187oaHkNDJ4PYw11LEDB5cDmRKE217Hd9TsfG7pzT",
+  "pool": {
+    "address": "CzSqJKHWMHZNTcbVfWPQh1TWhyTMdY9s37zRnJwtrfhk",
+    "activationPoint": "1790922443",
+    "tx": {
+      "label": "create_pool",
+      "sig": "Y6ddcqKMqzor3ToXugsSPFWgfSw32Guy4nzjwDvCuixuaZS4Ybeah7s1ahD3qLFR9G3dpeCHePAeCFzKNtgauuw",
+      "slot": 506548591,
+      "blockTime": 1790922444
+    }
+  },
+  "buys": [
+    {
+      "index": 0,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #0",
+        "sig": "yK1HRU9gcmMr5i9uysJXpK6KTZmVBqoHhCRLkAzvA97KpbmVG226P4HkbxaSc1RdQNFQ1K88o4rpYnubMbcFVsi",
+        "slot": 506548597,
+        "blockTime": 1790922445
+      },
+      "point": 1790922445,
+      "sdkQuoteBaseOut": "109156134692234",
+      "simBaseOut": "109156134692234",
+      "chainBaseOut": "109156134692234",
+      "simFeeNumerator": "50000000",
+      "chainSqrtPriceAfter": "5137419515726026",
+      "simSqrtPriceAfter": "5137419515726026",
+      "chainQuoteReserve": "7600000",
+      "simQuoteReserve": "7600000",
+      "chainFees": {
+        "partnerQuote": "160000",
+        "creatorQuote": "160000",
+        "protocolQuote": "80000"
+      },
+      "simFees": {
+        "partnerQuote": "160000",
+        "creatorQuote": "160000",
+        "protocolQuote": "80000"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 2,
+      "schedulePeriod": 0
+    },
+    {
+      "index": 1,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #1",
+        "sig": "4zkTxvFKfgRX1L4FKYeWGGujbQKXVaHhbZ7dKGofefzABQpGptvzEK2oCdihz7q4M22NjpB6rZEiCs1P8xu1ymBN",
+        "slot": 506548636,
+        "blockTime": 1790922455
+      },
+      "point": 1790922455,
+      "sdkQuoteBaseOut": "89454871628581",
+      "simBaseOut": "89454871628581",
+      "chainBaseOut": "89454871628581",
+      "simFeeNumerator": "43333334",
+      "chainSqrtPriceAfter": "5666840996221481",
+      "simSqrtPriceAfter": "5666840996221481",
+      "chainQuoteReserve": "15253333",
+      "simQuoteReserve": "15253333",
+      "chainFees": {
+        "partnerQuote": "298667",
+        "creatorQuote": "298667",
+        "protocolQuote": "149333"
+      },
+      "simFees": {
+        "partnerQuote": "298667",
+        "creatorQuote": "298667",
+        "protocolQuote": "149333"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 12,
+      "schedulePeriod": 1
+    },
+    {
+      "index": 2,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #2",
+        "sig": "5vXFVfi2UuAQBtRqz6596cTASFNKBJWSv6rRfusQ8sYxgTEpdb84nmSp1au6ZwVdtpmpn5sxXXtdS3e6c9WzzoLb",
+        "slot": 506548680,
+        "blockTime": 1790922465
+      },
+      "point": 1790922465,
+      "sdkQuoteBaseOut": "74640861265232",
+      "simBaseOut": "74640861265232",
+      "chainBaseOut": "74640861265232",
+      "simFeeNumerator": "36666668",
+      "chainSqrtPriceAfter": "6199951802115330",
+      "simSqrtPriceAfter": "6199951802115330",
+      "chainQuoteReserve": "22959999",
+      "simQuoteReserve": "22959999",
+      "chainFees": {
+        "partnerQuote": "416001",
+        "creatorQuote": "416001",
+        "protocolQuote": "207999"
+      },
+      "simFees": {
+        "partnerQuote": "416001",
+        "creatorQuote": "416001",
+        "protocolQuote": "207999"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 22,
+      "schedulePeriod": 2
+    },
+    {
+      "index": 3,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #3",
+        "sig": "2ubgPKVbfC9sgyGxeNYPe4KuM1yu4ZiKJauc78eWbZ5jwcqa7ufXuTiMFe3cCYAAwqi3c32saiHSGfX2GVQijyAX",
+        "slot": 506548720,
+        "blockTime": 1790922475
+      },
+      "point": 1790922475,
+      "sdkQuoteBaseOut": "63221128138203",
+      "simBaseOut": "63221128138203",
+      "chainBaseOut": "63221128138203",
+      "simFeeNumerator": "30000002",
+      "chainSqrtPriceAfter": "6736751933407573",
+      "simSqrtPriceAfter": "6736751933407573",
+      "chainQuoteReserve": "30719998",
+      "simQuoteReserve": "30719998",
+      "chainFees": {
+        "partnerQuote": "512002",
+        "creatorQuote": "512001",
+        "protocolQuote": "255999"
+      },
+      "simFees": {
+        "partnerQuote": "512002",
+        "creatorQuote": "512001",
+        "protocolQuote": "255999"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 32,
+      "schedulePeriod": 3
+    },
+    {
+      "index": 4,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #4",
+        "sig": "2M2czNNFa5uQNjNuYHmbDbym56b8fVK1gE6VkUhoPYz4wkxeKSdgce7iMMTU36drTCKER3ru7PM51w7ew5uSR7Fo",
+        "slot": 506548760,
+        "blockTime": 1790922485
+      },
+      "point": 1790922485,
+      "sdkQuoteBaseOut": "54232351825158",
+      "simBaseOut": "54232351825158",
+      "chainBaseOut": "54232351825158",
+      "simFeeNumerator": "23333336",
+      "chainSqrtPriceAfter": "7277241459273493",
+      "simSqrtPriceAfter": "7277241459273493",
+      "chainQuoteReserve": "38533331",
+      "simQuoteReserve": "38533331",
+      "chainFees": {
+        "partnerQuote": "586669",
+        "creatorQuote": "586668",
+        "protocolQuote": "293332"
+      },
+      "simFees": {
+        "partnerQuote": "586669",
+        "creatorQuote": "586668",
+        "protocolQuote": "293332"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 42,
+      "schedulePeriod": 4
+    },
+    {
+      "index": 5,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #5",
+        "sig": "34k4deG53Tn9cXejwAdRW2TbpNvpuxuEeVoQBGiBfrQkbxZk28BZgx9SSShrNwSWwux7wfToAwDaFkPmjLbALHnG",
+        "slot": 506548800,
+        "blockTime": 1790922495
+      },
+      "point": 1790922495,
+      "sdkQuoteBaseOut": "47030299728960",
+      "simBaseOut": "47030299728960",
+      "chainBaseOut": "47030299728960",
+      "simFeeNumerator": "16666670",
+      "chainSqrtPriceAfter": "7821420310537807",
+      "simSqrtPriceAfter": "7821420310537807",
+      "chainQuoteReserve": "46399997",
+      "simQuoteReserve": "46399997",
+      "chainFees": {
+        "partnerQuote": "640003",
+        "creatorQuote": "640002",
+        "protocolQuote": "319998"
+      },
+      "simFees": {
+        "partnerQuote": "640003",
+        "creatorQuote": "640002",
+        "protocolQuote": "319998"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 52,
+      "schedulePeriod": 5
+    },
+    {
+      "index": 6,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #6",
+        "sig": "35Lm9f7jUDwdzEiw3HuucZEt9Q6oigLKu5gp4ymxzDrcF8sZ3BzcojQCcqfSakabGUdf5HCiWqHgVxpm1BJNJoVd",
+        "slot": 506548839,
+        "blockTime": 1790922504
+      },
+      "point": 1790922504,
+      "sdkQuoteBaseOut": "41170904549021",
+      "simBaseOut": "41170904549021",
+      "chainBaseOut": "41170904549021",
+      "simFeeNumerator": "10000004",
+      "chainSqrtPriceAfter": "8369288487200514",
+      "simSqrtPriceAfter": "8369288487200514",
+      "chainQuoteReserve": "54319996",
+      "simQuoteReserve": "54319996",
+      "chainFees": {
+        "partnerQuote": "672004",
+        "creatorQuote": "672002",
+        "protocolQuote": "335998"
+      },
+      "simFees": {
+        "partnerQuote": "672004",
+        "creatorQuote": "672002",
+        "protocolQuote": "335998"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 61,
+      "schedulePeriod": 6
+    },
+    {
+      "index": 7,
+      "mode": "exactIn",
+      "amountInLamports": "8000000",
+      "tx": {
+        "label": "swap2 #7",
+        "sig": "ZUZQryUunBavNmFfvWu9C5p8PjzHNL6HsqhHQPMaaAsDid6m5BoZc5Bue1dqjJ1CRfTzj6XFw7S4ZHyFVidZq7L",
+        "slot": 506548878,
+        "blockTime": 1790922514
+      },
+      "point": 1790922514,
+      "sdkQuoteBaseOut": "36111841608423",
+      "simBaseOut": "36111841608423",
+      "chainBaseOut": "36111841608423",
+      "simFeeNumerator": "10000004",
+      "chainSqrtPriceAfter": "8917156663863221",
+      "simSqrtPriceAfter": "8917156663863221",
+      "chainQuoteReserve": "62239995",
+      "simQuoteReserve": "62239995",
+      "chainFees": {
+        "partnerQuote": "704005",
+        "creatorQuote": "704002",
+        "protocolQuote": "351998"
+      },
+      "simFees": {
+        "partnerQuote": "704005",
+        "creatorQuote": "704002",
+        "protocolQuote": "351998"
+      },
+      "simIncludedIn": "8000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 71,
+      "schedulePeriod": 7
+    },
+    {
+      "index": 8,
+      "mode": "exactIn",
+      "amountInLamports": "20000000",
+      "tx": {
+        "label": "swap2 #8",
+        "sig": "4gRZomcJnBsa3jHAB4TtZLtr2mRuKuYvih53HYhNNTAak35pk1qi54NkuUkmuqnePumZoCcTCHkzm62bByu4Vz9e",
+        "slot": 506548918,
+        "blockTime": 1790922524
+      },
+      "point": 1790922524,
+      "sdkQuoteBaseOut": "73450840811368",
+      "simBaseOut": "73450840811368",
+      "chainBaseOut": "73450840811368",
+      "simFeeNumerator": "10000004",
+      "chainSqrtPriceAfter": "10286827209282915",
+      "simSqrtPriceAfter": "10286827209282915",
+      "chainQuoteReserve": "82039994",
+      "simQuoteReserve": "82039994",
+      "chainFees": {
+        "partnerQuote": "784006",
+        "creatorQuote": "784002",
+        "protocolQuote": "391998"
+      },
+      "simFees": {
+        "partnerQuote": "784006",
+        "creatorQuote": "784002",
+        "protocolQuote": "391998"
+      },
+      "simIncludedIn": "20000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 81,
+      "schedulePeriod": 8
+    },
+    {
+      "index": 9,
+      "mode": "exactIn",
+      "amountInLamports": "40000000",
+      "tx": {
+        "label": "swap2 #9",
+        "sig": "3NPkp1JA5TTb23eBuUoM8jEvnQm3bjC3xJW1RL5HARspPXu13CQe3D3JVpy8by44NttS2cmHfTgiuRXfD21UtDBn",
+        "slot": 506548932,
+        "blockTime": 1790922527
+      },
+      "point": 1790922527,
+      "sdkQuoteBaseOut": "100562598698006",
+      "simBaseOut": "100562598698006",
+      "chainBaseOut": "100562598698006",
+      "simFeeNumerator": "10000004",
+      "chainSqrtPriceAfter": "13026168369297587",
+      "simSqrtPriceAfter": "13026168369297587",
+      "chainQuoteReserve": "121639993",
+      "simQuoteReserve": "121639993",
+      "chainFees": {
+        "partnerQuote": "944007",
+        "creatorQuote": "944002",
+        "protocolQuote": "471998"
+      },
+      "simFees": {
+        "partnerQuote": "944007",
+        "creatorQuote": "944002",
+        "protocolQuote": "471998"
+      },
+      "simIncludedIn": "40000000",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 84,
+      "schedulePeriod": 8
+    },
+    {
+      "index": 10,
+      "mode": "partialFill",
+      "amountInLamports": "200000000",
+      "tx": {
+        "label": "swap2 #10",
+        "sig": "2BkMvLQMGHGUVJRccDbMnKDMLgNL8ct7JtARMvZz4iVZRikVntf17tC6kzmcCgS4CBysMDGb3YRPKJmV4KSxm6BY",
+        "slot": 506548947,
+        "blockTime": 1790922531
+      },
+      "point": 1790922531,
+      "sdkQuoteBaseOut": "110967934220017",
+      "simBaseOut": "110967934220017",
+      "chainBaseOut": "110967934220017",
+      "simFeeNumerator": "10000004",
+      "chainSqrtPriceAfter": "18446744073709551",
+      "simSqrtPriceAfter": "18446744073709551",
+      "chainQuoteReserve": "200000001",
+      "simQuoteReserve": "200000001",
+      "chainFees": {
+        "partnerQuote": "1260614",
+        "creatorQuote": "1260608",
+        "protocolQuote": "630301"
+      },
+      "simFees": {
+        "partnerQuote": "1260614",
+        "creatorQuote": "1260608",
+        "protocolQuote": "630301"
+      },
+      "simIncludedIn": "79151524",
+      "clockShift": 0,
+      "independentMatch": true,
+      "cumulativeMatch": true,
+      "poolAgeSec": 88,
+      "schedulePeriod": 8
+    }
+  ],
+  "curveCompleteAt": "2026-10-02T06:28:53.669Z",
+  "migration": {
+    "tx": {
+      "label": "migration_damm_v2",
+      "sig": "3SvG3EdXYCGgq9NqC2jHepd9GDfBw51UyhSjfcrgNG7rbT1u7XaCtr3mc9RcDEfyCprNHeJXxPAC8ZvCAZjbs923",
+      "slot": 506548966,
+      "blockTime": 1790922535
+    },
+    "dammPool": "HHfwM12KU5pVG4ti4UWednTmvY2QDJwtenXYt1tt7QdB",
+    "dammConfig": "Hv8Lmzmnju6m7kcokVKvwqz7QPmdX9XfKjJsXz8RXcjp",
+    "firstPositionNft": "BpmSM5XTgXquVTFEva55TM2tNMDSMzARPQ4QRzi4ePQS",
+    "secondPositionNft": "7WaRziZuEPzaUbR9RDX1sfvkzTXsuwpof8QYb8HvkEEU",
+    "simMigrationSqrtPrice": "18446744073709551",
+    "dammSqrtPrice": "18446744073709551",
+    "dammLiquidity": "3681970974404210226656403936349"
+  }
+}

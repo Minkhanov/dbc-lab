@@ -4,15 +4,72 @@ Everything here happened on **Solana devnet**. No mainnet transaction was sent, 
 The only key is a throw-away devnet keypair that lives outside git (`keys/`, ignored). Programs are the real deployed ones:
 DBC `dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN`, DAMM v2 `cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG`.
 
-Generated: 2026-10-01T20:27:25.210Z
+Generated: 2026-10-02T06:29:01.413Z
 
 ## A. Own launch: config -> pool -> buys -> migration to DAMM v2
 
-**Status: NOT EXECUTED YET.** The throw-away devnet wallet could not be funded: the public faucet (`requestAirdrop` on api.devnet.solana.com) kept answering
-`429 You've either reached your airdrop limit today or the airdrop faucet has run dry`. The runner (`src/devnet/run.ts`) is complete and resumable;
-it runs with `npm run devnet:all` as soon as the wallet holds about 1 devnet SOL. This section is regenerated from `devnet-run/state.json`.
+Payer / partner / creator / trader (same throw-away wallet): `EaF7jiLSjxvKNr76VmPM8aWucP1j5i8A6eM6WUjX3LRE`
+Preset: `devnet-micro`
 
-Wallet to fund (devnet only, public key): `EaF7jiLSjxvKNr76VmPM8aWucP1j5i8A6eM6WUjX3LRE`.
+| Step | Address / signature | Links |
+|---|---|---|
+| DBC config | `FwNgepD3vqiwYMwkhMFrhmDg3xPXnCGM5iJ6eRTXWEyJ` | [address](https://explorer.solana.com/address/FwNgepD3vqiwYMwkhMFrhmDg3xPXnCGM5iJ6eRTXWEyJ?cluster=devnet) |
+| `create_config` tx | `oca1oaM8AmAcQCA3XyUVaZR9fXCmMGqm4CXNUpgDSmpPojQj8uDQ1DDAV1v4Jvke4XbG2y9gkGV8t3WgBMpJ8cA` | [explorer](https://explorer.solana.com/tx/oca1oaM8AmAcQCA3XyUVaZR9fXCmMGqm4CXNUpgDSmpPojQj8uDQ1DDAV1v4Jvke4XbG2y9gkGV8t3WgBMpJ8cA?cluster=devnet), [solscan](https://solscan.io/tx/oca1oaM8AmAcQCA3XyUVaZR9fXCmMGqm4CXNUpgDSmpPojQj8uDQ1DDAV1v4Jvke4XbG2y9gkGV8t3WgBMpJ8cA?cluster=devnet) |
+| Base mint | `7M4187oaHkNDJ4PYw11LEDB5cDmRKE217Hd9TsfG7pzT` | [address](https://explorer.solana.com/address/7M4187oaHkNDJ4PYw11LEDB5cDmRKE217Hd9TsfG7pzT?cluster=devnet) |
+| Virtual pool | `CzSqJKHWMHZNTcbVfWPQh1TWhyTMdY9s37zRnJwtrfhk` | [address](https://explorer.solana.com/address/CzSqJKHWMHZNTcbVfWPQh1TWhyTMdY9s37zRnJwtrfhk?cluster=devnet) |
+| `initialize_virtual_pool` tx | `Y6ddcqKMqzor3ToXugsSPFWgfSw32Guy4nzjwDvCuixuaZS4Ybeah7s1ahD3qLFR9G3dpeCHePAeCFzKNtgauuw` | [explorer](https://explorer.solana.com/tx/Y6ddcqKMqzor3ToXugsSPFWgfSw32Guy4nzjwDvCuixuaZS4Ybeah7s1ahD3qLFR9G3dpeCHePAeCFzKNtgauuw?cluster=devnet) |
+| buy #0 (exactIn, 0.008 SOL) | `yK1HRU9gcmMr5i9uysJXpK6KTZmVBqoHhCRLkAzvA97KpbmVG226P4HkbxaSc1RdQNFQ1K88o4rpYnubMbcFVsi` | [explorer](https://explorer.solana.com/tx/yK1HRU9gcmMr5i9uysJXpK6KTZmVBqoHhCRLkAzvA97KpbmVG226P4HkbxaSc1RdQNFQ1K88o4rpYnubMbcFVsi?cluster=devnet) |
+| buy #1 (exactIn, 0.008 SOL) | `4zkTxvFKfgRX1L4FKYeWGGujbQKXVaHhbZ7dKGofefzABQpGptvzEK2oCdihz7q4M22NjpB6rZEiCs1P8xu1ymBN` | [explorer](https://explorer.solana.com/tx/4zkTxvFKfgRX1L4FKYeWGGujbQKXVaHhbZ7dKGofefzABQpGptvzEK2oCdihz7q4M22NjpB6rZEiCs1P8xu1ymBN?cluster=devnet) |
+| buy #2 (exactIn, 0.008 SOL) | `5vXFVfi2UuAQBtRqz6596cTASFNKBJWSv6rRfusQ8sYxgTEpdb84nmSp1au6ZwVdtpmpn5sxXXtdS3e6c9WzzoLb` | [explorer](https://explorer.solana.com/tx/5vXFVfi2UuAQBtRqz6596cTASFNKBJWSv6rRfusQ8sYxgTEpdb84nmSp1au6ZwVdtpmpn5sxXXtdS3e6c9WzzoLb?cluster=devnet) |
+| buy #3 (exactIn, 0.008 SOL) | `2ubgPKVbfC9sgyGxeNYPe4KuM1yu4ZiKJauc78eWbZ5jwcqa7ufXuTiMFe3cCYAAwqi3c32saiHSGfX2GVQijyAX` | [explorer](https://explorer.solana.com/tx/2ubgPKVbfC9sgyGxeNYPe4KuM1yu4ZiKJauc78eWbZ5jwcqa7ufXuTiMFe3cCYAAwqi3c32saiHSGfX2GVQijyAX?cluster=devnet) |
+| buy #4 (exactIn, 0.008 SOL) | `2M2czNNFa5uQNjNuYHmbDbym56b8fVK1gE6VkUhoPYz4wkxeKSdgce7iMMTU36drTCKER3ru7PM51w7ew5uSR7Fo` | [explorer](https://explorer.solana.com/tx/2M2czNNFa5uQNjNuYHmbDbym56b8fVK1gE6VkUhoPYz4wkxeKSdgce7iMMTU36drTCKER3ru7PM51w7ew5uSR7Fo?cluster=devnet) |
+| buy #5 (exactIn, 0.008 SOL) | `34k4deG53Tn9cXejwAdRW2TbpNvpuxuEeVoQBGiBfrQkbxZk28BZgx9SSShrNwSWwux7wfToAwDaFkPmjLbALHnG` | [explorer](https://explorer.solana.com/tx/34k4deG53Tn9cXejwAdRW2TbpNvpuxuEeVoQBGiBfrQkbxZk28BZgx9SSShrNwSWwux7wfToAwDaFkPmjLbALHnG?cluster=devnet) |
+| buy #6 (exactIn, 0.008 SOL) | `35Lm9f7jUDwdzEiw3HuucZEt9Q6oigLKu5gp4ymxzDrcF8sZ3BzcojQCcqfSakabGUdf5HCiWqHgVxpm1BJNJoVd` | [explorer](https://explorer.solana.com/tx/35Lm9f7jUDwdzEiw3HuucZEt9Q6oigLKu5gp4ymxzDrcF8sZ3BzcojQCcqfSakabGUdf5HCiWqHgVxpm1BJNJoVd?cluster=devnet) |
+| buy #7 (exactIn, 0.008 SOL) | `ZUZQryUunBavNmFfvWu9C5p8PjzHNL6HsqhHQPMaaAsDid6m5BoZc5Bue1dqjJ1CRfTzj6XFw7S4ZHyFVidZq7L` | [explorer](https://explorer.solana.com/tx/ZUZQryUunBavNmFfvWu9C5p8PjzHNL6HsqhHQPMaaAsDid6m5BoZc5Bue1dqjJ1CRfTzj6XFw7S4ZHyFVidZq7L?cluster=devnet) |
+| buy #8 (exactIn, 0.02 SOL) | `4gRZomcJnBsa3jHAB4TtZLtr2mRuKuYvih53HYhNNTAak35pk1qi54NkuUkmuqnePumZoCcTCHkzm62bByu4Vz9e` | [explorer](https://explorer.solana.com/tx/4gRZomcJnBsa3jHAB4TtZLtr2mRuKuYvih53HYhNNTAak35pk1qi54NkuUkmuqnePumZoCcTCHkzm62bByu4Vz9e?cluster=devnet) |
+| buy #9 (exactIn, 0.04 SOL) | `3NPkp1JA5TTb23eBuUoM8jEvnQm3bjC3xJW1RL5HARspPXu13CQe3D3JVpy8by44NttS2cmHfTgiuRXfD21UtDBn` | [explorer](https://explorer.solana.com/tx/3NPkp1JA5TTb23eBuUoM8jEvnQm3bjC3xJW1RL5HARspPXu13CQe3D3JVpy8by44NttS2cmHfTgiuRXfD21UtDBn?cluster=devnet) |
+| buy #10 (partialFill, 0.2 SOL) | `2BkMvLQMGHGUVJRccDbMnKDMLgNL8ct7JtARMvZz4iVZRikVntf17tC6kzmcCgS4CBysMDGb3YRPKJmV4KSxm6BY` | [explorer](https://explorer.solana.com/tx/2BkMvLQMGHGUVJRccDbMnKDMLgNL8ct7JtARMvZz4iVZRikVntf17tC6kzmcCgS4CBysMDGb3YRPKJmV4KSxm6BY?cluster=devnet) |
+| `migration_damm_v2` tx | `3SvG3EdXYCGgq9NqC2jHepd9GDfBw51UyhSjfcrgNG7rbT1u7XaCtr3mc9RcDEfyCprNHeJXxPAC8ZvCAZjbs923` | [explorer](https://explorer.solana.com/tx/3SvG3EdXYCGgq9NqC2jHepd9GDfBw51UyhSjfcrgNG7rbT1u7XaCtr3mc9RcDEfyCprNHeJXxPAC8ZvCAZjbs923?cluster=devnet) |
+| DAMM v2 pool | `HHfwM12KU5pVG4ti4UWednTmvY2QDJwtenXYt1tt7QdB` | [address](https://explorer.solana.com/address/HHfwM12KU5pVG4ti4UWednTmvY2QDJwtenXYt1tt7QdB?cluster=devnet) |
+| Position NFTs | `BpmSM5XTgXquVTFEva55TM2tNMDSMzARPQ4QRzi4ePQS`, `7WaRziZuEPzaUbR9RDX1sfvkzTXsuwpof8QYb8HvkEEU` | |
+
+### Config values derived by the program vs the simulator
+
+| field | on chain | simulator | equal |
+|---|---|---|---|
+| migrationSqrtPrice | 18446744073709551 | 18446744073709551 | yes |
+| migrationQuoteThreshold | 200000000 | 200000000 | yes |
+| sqrtStartPrice | 4611687360628964 | 4611687360628964 | yes |
+| cliffFeeNumerator | 50000000 | 50000000 | yes |
+| curveSegments | 2 | 2 | yes |
+| swapBaseAmount | 799999767165210 | 799999767165210 | yes |
+| migrationBaseThreshold | 200000046566969 | 200000046566969 | yes |
+
+### Simulator vs chain, trade by trade
+
+`chain` = tokens actually received (change of the buyer's token account); `sdk` = SDK `swapQuote2` taken just before sending; `sim` = this repo's simulator replayed at the on-chain block time of the transaction.
+
+| # | mode | in (SOL) | pool age (s) | fee period | chain out | sdk quote | sim out | replay from real pre-state | cumulative sim path |
+|---|---|---|---|---|---|---|---|---|---|
+| 0 | exactIn | 0.008 | 2 | 0 | 109156134692234 | 109156134692234 | 109156134692234 | equal | equal |
+| 1 | exactIn | 0.008 | 12 | 1 | 89454871628581 | 89454871628581 | 89454871628581 | equal | equal |
+| 2 | exactIn | 0.008 | 22 | 2 | 74640861265232 | 74640861265232 | 74640861265232 | equal | equal |
+| 3 | exactIn | 0.008 | 32 | 3 | 63221128138203 | 63221128138203 | 63221128138203 | equal | equal |
+| 4 | exactIn | 0.008 | 42 | 4 | 54232351825158 | 54232351825158 | 54232351825158 | equal | equal |
+| 5 | exactIn | 0.008 | 52 | 5 | 47030299728960 | 47030299728960 | 47030299728960 | equal | equal |
+| 6 | exactIn | 0.008 | 61 | 6 | 41170904549021 | 41170904549021 | 41170904549021 | equal | equal |
+| 7 | exactIn | 0.008 | 71 | 7 | 36111841608423 | 36111841608423 | 36111841608423 | equal | equal |
+| 8 | exactIn | 0.02 | 81 | 8 | 73450840811368 | 73450840811368 | 73450840811368 | equal | equal |
+| 9 | exactIn | 0.04 | 84 | 8 | 100562598698006 | 100562598698006 | 100562598698006 | equal | equal |
+| 10 | partialFill | 0.2 | 88 | 8 | 110967934220017 | 110967934220017 | 110967934220017 | equal | equal |
+
+Trades where simulator output differs from the chain: **0 of 11**.
+
+### Migration result
+
+DAMM v2 pool sqrt price: `18446744073709551`
+DBC migration sqrt price (from config): `18446744073709551`
+Equal: **yes**
 
 ## B. `create_config` of every preset, simulated against the deployed devnet program (no SOL needed)
 
